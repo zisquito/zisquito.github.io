@@ -22,7 +22,6 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* Desplazamiento suave al hacer clic en los enlaces */
   html {
     scroll-behavior: smooth;
   }
@@ -104,12 +103,12 @@
     font-weight: 600;
     padding-bottom: 5px;
     transition: 0.3s;
-    /* Evita que los enlaces salten de tamaño al poner el borde */
     border-bottom: 3px solid transparent; 
   }
 
   .nav-links a.active {
     border-bottom: 3px solid var(--primary-blue);
+    color: var(--primary-blue); /* También le damos color azul al texto activo */
   }
 
   .nav-links a:hover {
@@ -140,7 +139,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 0; /* Aumentado para mejor separación con el header sticky */
+    padding: 80px 0; 
     gap: 40px;
   }
 
@@ -239,7 +238,7 @@
     grid-template-columns: 1.8fr 1fr;
     gap: 40px;
     padding-bottom: 60px;
-    padding-top: 60px; /* Añadido espacio superior para compensar el header al bajar */
+    padding-top: 60px; 
   }
 
   .blog-header {
@@ -538,25 +537,32 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-links a");
 
+    // 1. Efecto INMEDIATO al hacer clic
+    navLinks.forEach(link => {
+      link.addEventListener("click", function() {
+        // Quitamos la línea de todos los enlaces
+        navLinks.forEach(nav => nav.classList.remove("active"));
+        // Ponemos la línea en el enlace que acabamos de clickear
+        this.classList.add("active");
+      });
+    });
+
+    // 2. Efecto de respaldo al hacer SCROLL (opcional)
+    const sections = document.querySelectorAll("section");
     window.addEventListener("scroll", () => {
       let current = "";
-
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        // El "- 100" ajusta la detección para tener en cuenta el menú pegajoso superior
-        if (pageYOffset >= (sectionTop - 150)) {
+        if (pageYOffset >= (sectionTop - 250)) {
           current = section.getAttribute("id");
         }
       });
 
       navLinks.forEach((link) => {
-        link.classList.remove("active");
         if (link.getAttribute("href").includes(current)) {
+          navLinks.forEach(nav => nav.classList.remove("active"));
           link.classList.add("active");
         }
       });
