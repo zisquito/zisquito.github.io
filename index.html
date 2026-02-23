@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Francisco Robles | Marketing & Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav h2 {
+  font-weight: 700;
+  color: #2563eb;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+}
+
+.cv-btn {
+  background: #2563eb;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+  flex-wrap: wrap;
+}
+
+.header-text {
+  max-width: 550px;
+}
+
+.header-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.header-text span {
+  color: #2563eb;
+}
+
+.badges {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #e5edff;
+  color: #2563eb;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+header img {
+  width: 260px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+section {
+  padding: 60px;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.blog-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+form {
+  max-width: 500px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+footer {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.social a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+@media(max-width: 900px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header img {
+    margin-top: 30px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <h2>Francisco Robles</h2>
+  <ul>
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contacto">Contáctame</a></li>
+    <li><a href="cv.pdf" class="cv-btn" download>Descargar CV</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="header-text">
+    <h1>Hola 👋 Soy <span>Francisco</span></h1>
+    <p>Graduado en Marketing e Investigación de Mercados (UMA).  
+    Interesado en analítica digital, CRO y marketing online.</p>
+
+    <div class="badges">
+      <div class="badge">GA4</div>
+      <div class="badge">Google Ads</div>
+      <div class="badge">SEO</div>
+      <div class="badge">Excel</div>
+      <div class="badge">WordPress</div>
+    </div>
+  </div>
+
+  <img src="img/perfil.jpg" alt="Francisco">
+</header>
+
+<section id="sobre">
+  <h2>Sobre mí</h2>
+  <p>
+    Soy un perfil junior apasionado por los datos y el marketing digital.
+    Me gusta analizar el comportamiento del usuario y buscar mejoras
+    prácticas que ayuden a optimizar resultados.
+  </p>
+</section>
+
+<section id="blog">
+  <h2>Blog</h2>
+
+  <div class="blog-container">
+    <div class="blog-card">
+      <h3>Cómo medir conversiones con GA4</h3>
+      <p>Aprendizajes básicos sobre eventos y conversiones.</p>
+    </div>
+
+    <div class="blog-card">
+      <h3>Tips para mejorar una web (CRO básico)</h3>
+      <p>Pequeños cambios que pueden mejorar resultados.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contáctame</h2>
+
+  <form action="https://formsubmit.co/frandresrm@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu email" required>
+    <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.linkedin.com/in/f-a-r-m" target="_blank">LinkedIn</a>
+    <a href="https://github.com/" target="_blank">GitHub</a>
+  </div>
+  <p>© 2026 Francisco Robles</p>
+</footer>
+
+</body>
+</html>
