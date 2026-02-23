@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Francisco Robles | Marketing & Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --primary-blue: #0d6efd;
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+    --bg-light: #f4f7fb;
+    --white: #ffffff;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    /* Patrón de puntos sutil de fondo */
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* --- NAVEGACIÓN --- */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-subtitle {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .brand-subtitle::before {
+    content: "•";
+    color: #93c5fd;
+    font-size: 1.5rem;
+  }
+
+  .brand-subtitle span {
+    color: var(--primary-blue);
+    font-weight: 600;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    padding-bottom: 5px;
+    transition: 0.3s;
+  }
+
+  .nav-links a.active {
+    border-bottom: 3px solid var(--primary-blue);
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-blue);
+  }
+
+  .btn-primary {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: #0b5ed7;
+  }
+
+  /* --- HERO SECTION --- */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    gap: 40px;
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 4px solid var(--primary-blue);
+    padding-bottom: 5px;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 15px;
+  }
+
+  .hero-text p strong {
+    color: var(--text-dark);
+  }
+
+  .badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+  }
+
+  .badge {
+    background: var(--white);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+
+  /* Colores específicos para los iconos de las herramientas */
+  .badge .fa-chart-simple { color: #F9AB00; }
+  .badge .fa-google { color: #4285F4; }
+  .badge .fa-magnifying-glass-chart { color: #0F9D58; }
+  .badge .fa-file-excel { color: #107C41; }
+  .badge .fa-wordpress { color: #21759B; }
+
+  /* Contenedor de la imagen estilo mockup */
+  .hero-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 30px 10px 40px 10px;
+    border: 8px solid var(--white);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+
+  .image-backdrop {
+    position: absolute;
+    top: -20px;
+    right: 10%;
+    width: 80%;
+    height: 100%;
+    background: var(--primary-blue);
+    border-radius: 20px 40px 20px 40px;
+    z-index: 1;
+    transform: rotate(3deg);
+  }
+
+  /* --- SECCIÓN INFERIOR (BLOG + CONTACTO) --- */
+  .bottom-section {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 40px;
+    padding-bottom: 60px;
+  }
+
+  .blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .blog-header h3 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .blog-header h3 i {
+    color: var(--primary-blue);
+  }
+
+  .blog-header a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid var(--text-dark);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .blog-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  }
+
+  .blog-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .blog-card p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .card-line {
+    width: 30px;
+    height: 3px;
+    background: var(--primary-blue);
+    margin-bottom: 30px;
+  }
+
+  /* Área para la ilustración del blog */
+  .blog-img-placeholder {
+    height: 100px;
+    background: #f8fafc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    font-size: 2rem;
+  }
+
+  /* Tarjeta de Contacto */
+  .contact-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  }
+
+  .contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-card h3 i {
+    color: var(--primary-blue);
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 15px;
+  }
+
+  .input-group i {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: var(--text-gray);
+  }
+
+  .contact-card input, .contact-card textarea {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #f9fafb;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .contact-card textarea {
+    padding-left: 12px; /* Sin icono en textarea */
+    resize: none;
+    height: 100px;
+  }
+
+  .contact-card input:focus, .contact-card textarea:focus {
+    border-color: var(--primary-blue);
+    background: var(--white);
+  }
+
+  .contact-card button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 1.1rem;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+    border-top: 1px solid #e5e7eb;
+    color: var(--text-gray);
+  }
+
+  .social-icons a {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: var(--primary-blue);
+  }
+
+  /* --- RESPONSIVE MOBILE --- */
+  @media(max-width: 992px) {
+    .hero {
+      flex-direction: column;
+    }
+    .bottom-section {
+      grid-template-columns: 1fr;
+    }
+    .image-backdrop {
+      right: 0;
+      width: 100%;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .nav-content {
+      flex-direction: column;
+      gap: 15px;
+    }
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+    .brand-subtitle {
+      display: none; /* Ocultamos el subtítulo en móvil para ahorrar espacio */
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-content">
+    <div class="brand">
+      Francisco Robles
+      <div class="brand-subtitle">Marketing & Analytics <span>Junior</span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#sobre" class="active">Sobre mí</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contacto">Contáctame</a></li>
+    </ul>
+    <a href="cv.pdf" class="btn-primary" download>
+      <i class="fa-regular fa-user"></i> Descargar CV
+    </a>
+  </div>
+</nav>
+
+<main class="container">
+  <section id="sobre" class="hero">
+    <div class="hero-text">
+      <h1 class="section-title">Sobre mí</h1>
+      <h2>Hola, soy Francisco 👋</h2>
+      <p>Graduado en <strong>Marketing e Investigación de Mercados</strong> (UMA).</p>
+      <p>Me interesan la <strong>analítica digital</strong>, el <strong>CRO</strong> y el <strong>marketing online</strong>.</p>
+      <p>Siempre aprendiendo y buscando nuevos retos.</p>
+
+      <div class="badges">
+        <div class="badge"><i class="fa-solid fa-chart-simple"></i> GA4</div>
+        <div class="badge"><i class="fa-brands fa-google"></i> Google Ads</div>
+        <div class="badge"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO</div>
+        <div class="badge"><i class="fa-solid fa-file-excel"></i> Excel</div>
+        <div class="badge"><i class="fa-brands fa-wordpress"></i> WordPress</div>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="image-backdrop"></div>
+      <div class="image-wrapper">
+        <img src="img/perfil.jpg" alt="Francisco Robles">
+      </div>
+    </div>
+  </section>
+
+  <div class="bottom-section">
+    
+    <section id="blog">
+      <div class="blog-header">
+        <h3><i class="fa-regular fa-comment-dots"></i> Blog</h3>
+        <a href="#">Ver todos &rarr;</a>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <h4>5 Herramientas de Analítica que uso a diario</h4>
+          <p>Abril 2026</p>
+          <div class="card-line"></div>
+          <div class="blog-img-placeholder">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <h4>Consejos para mejorar una campaña en Google Ads</h4>
+          <p>Marzo 2026</p>
+          <div class="card-line"></div>
+          <div class="blog-img-placeholder">
+            <i class="fa-solid fa-bullhorn"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="contact-card">
+        <h3><i class="fa-regular fa-envelope"></i> Contáctame</h3>
+        <form action="https://formsubmit.co/frandresrm@gmail.com" method="POST">
+          <div class="input-group">
+            <i class="fa-regular fa-user"></i>
+            <input type="text" name="name" placeholder="Tu nombre" required>
+          </div>
+          <div class="input-group">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="email" name="email" placeholder="Tu email" required>
+          </div>
+          <div class="input-group">
+            <textarea name="message" placeholder="Tu mensaje" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="justify-content: center;">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/f-a-r-m" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <p>© 2026 Francisco Robles</p>
+  </footer>
+</main>
+
+</body>
+</html>
