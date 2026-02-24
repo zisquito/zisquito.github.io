@@ -17,10 +17,7 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
   html { scroll-behavior: smooth; }
-  body {
-    background-color: var(--bg-light); color: var(--text-dark);
-    background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px;
-  }
+  body { background-color: var(--bg-light); color: var(--text-dark); background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
   /* --- NAVEGACIÓN --- */
@@ -68,14 +65,17 @@
   
   /* Tarjeta de Contacto */
   .contact-card { background: var(--white); border-radius: 20px; padding: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
-  .contact-card h3 { font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .contact-card h3 { font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
   .contact-card h3 i { color: var(--primary-blue); }
+  .contact-email { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; word-break: break-all; }
+  .contact-email i { color: var(--primary-blue); }
   .input-group { position: relative; margin-bottom: 15px; }
   .input-group i { position: absolute; left: 15px; top: 15px; color: var(--text-gray); }
   .contact-card input, .contact-card textarea { width: 100%; padding: 12px 12px 12px 40px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 0.95rem; background: #f9fafb; outline: none; transition: 0.3s; }
   .contact-card textarea { padding-left: 12px; resize: none; height: 100px; }
   .contact-card input:focus, .contact-card textarea:focus { border-color: var(--primary-blue); background: var(--white); }
   .contact-card button { width: 100%; margin-top: 10px; padding: 14px; font-size: 1.1rem; }
+  
   footer { display: flex; align-items: center; gap: 20px; padding: 30px 0; border-top: 1px solid #e5e7eb; color: var(--text-gray); }
   .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
   .social-icons a:hover { color: var(--primary-blue); }
@@ -92,7 +92,7 @@
     <ul class="nav-links">
       <li><a href="#sobre" class="active">Sobre mí</a></li>
       <li><a href="blog.html">Blog</a></li>
-      <li><a href="#contacto">Contáctame</a></li>
+      <li><a href="contacto.html">Contáctame</a></li>
     </ul>
     <a href="cv.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
   </div>
@@ -140,10 +140,11 @@
       </div>
     </section>
 
-    <section id="contacto">
+    <section id="contacto-preview">
       <div class="contact-card">
         <h3><i class="fa-regular fa-envelope"></i> Contáctame</h3>
-        <form action="https://formsubmit.co/frandresrm@gmail.com" method="POST">
+        <div class="contact-email"><i class="fa-solid fa-at"></i> francisco.andres.robles.munoz@gmail.com</div>
+        <form action="https://formsubmit.co/francisco.andres.robles.munoz@gmail.com" method="POST">
           <div class="input-group"><i class="fa-regular fa-user"></i><input type="text" name="name" placeholder="Tu nombre" required></div>
           <div class="input-group"><i class="fa-regular fa-envelope"></i><input type="email" name="email" placeholder="Tu email" required></div>
           <div class="input-group"><textarea name="message" placeholder="Tu mensaje" required></textarea></div>
@@ -163,7 +164,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll(".nav-links a");
 
-    // Efecto INMEDIATO al hacer clic (solo aplica a los que tienen #, los demás saltan de página)
     navLinks.forEach(link => {
       link.addEventListener("click", function() {
         if(this.getAttribute("href").startsWith("#")) {
@@ -173,7 +173,6 @@
       });
     });
 
-    // Efecto de respaldo al hacer SCROLL (Solo evalúa "sobre" o "contacto")
     const sections = document.querySelectorAll("section");
     window.addEventListener("scroll", () => {
       let current = "";
