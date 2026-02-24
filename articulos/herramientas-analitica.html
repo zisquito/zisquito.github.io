@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Herramientas de Analítica que uso a diario | Francisco Robles</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root { --primary-blue: #0d6efd; --text-dark: #1f2937; --text-gray: #6b7280; --bg-light: #f4f7fb; --white: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+  body { background-color: var(--bg-light); color: var(--text-dark); background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  
+  /* NAVEGACIÓN */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 100; }
+  .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .brand { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .brand-subtitle { font-weight: 400; font-size: 0.9rem; color: var(--text-gray); display: flex; align-items: center; gap: 6px; }
+  .brand-subtitle::before { content: "•"; color: #93c5fd; font-size: 1.5rem; }
+  .brand-subtitle span { color: var(--primary-blue); font-weight: 600; }
+  .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; padding-bottom: 5px; transition: 0.3s; border-bottom: 3px solid transparent; }
+  .nav-links a:hover { color: var(--primary-blue); }
+  .btn-primary { background: var(--primary-blue); color: var(--white); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: 0.3s; }
+  .btn-primary:hover { background: #0b5ed7; }
+
+  /* ESTILOS ESPECÍFICOS DEL ARTÍCULO */
+  .back-link { display: inline-block; margin-top: 40px; color: var(--primary-blue); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .back-link:hover { text-decoration: underline; }
+  .article-header { padding: 30px 0 30px 0; text-align: center; border-bottom: 1px solid #e5e7eb; margin-bottom: 40px; }
+  .article-date { color: var(--text-gray); font-weight: 500; margin-bottom: 15px; display: block; font-size: 0.95rem; }
+  .article-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-dark); }
+  
+  .article-content { font-size: 1.1rem; line-height: 1.8; color: #4b5563; padding-bottom: 60px; }
+  .article-content h2 { font-size: 1.6rem; color: var(--text-dark); margin: 40px 0 15px 0; border-left: 4px solid var(--primary-blue); padding-left: 15px; }
+  .article-content p { margin-bottom: 20px; }
+  .article-content img { width: 100%; border-radius: 12px; margin: 30px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
+  
+  /* Cajas de herramientas */
+  .tool-box { background: var(--white); padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e5e7eb; }
+  .tool-box h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; color: var(--text-dark); }
+  .tool-box h3 i { color: var(--primary-blue); font-size: 1.4rem; }
+
+  /* FOOTER */
+  footer { display: flex; align-items: center; gap: 20px; padding: 40px 0; margin-top: 40px; border-top: 1px solid #e5e7eb; color: var(--text-gray); }
+  .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
+  .social-icons a:hover { color: var(--primary-blue); }
+
+  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-content">
+    <div class="brand">Francisco Robles <div class="brand-subtitle">Marketing & Analytics <span>Junior</span></div></div>
+    <ul class="nav-links">
+      <li><a href="../index.html#sobre">Sobre mí</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+      <li><a href="../contacto.html">Contáctame</a></li>
+    </ul>
+    <a href="../cv.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
+  </div>
+</nav>
+
+<main class="container">
+  
+  <a href="../blog.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al blog</a>
+
+  <article>
+    <header class="article-header">
+      <h1 class="article-title">5 Herramientas de Analítica que uso a diario</h1>
+      <span class="article-date"><i class="fa-regular fa-calendar"></i> 15 Abril 2026 • 3 min de lectura</span>
+    </header>
+
+    <div class="article-content">
+      <p>Como perfil Junior apasionado por los datos y el marketing digital, he comprobado que la intuición no es suficiente para tomar buenas decisiones. Necesitamos medir, analizar y optimizar. A lo largo de mi formación en la UMA y en mis proyectos personales, he ido creando mi propio "stack" de herramientas esenciales.</p>
+      
+      <p>Hoy quiero compartir contigo las 5 herramientas que tengo abiertas en mi navegador prácticamente todos los días:</p>
+
+      <h2>Mi Stack Analítico</h2>
+
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-chart-pie"></i> 1. Google Analytics 4 (GA4)</h3>
+        <p>Es la base de todo. Aunque la transición desde Universal Analytics fue un reto para el sector, el modelo basado en eventos de GA4 ofrece una flexibilidad brutal. La utilizo principalmente para analizar el comportamiento del usuario, medir conversiones clave (leads, descargas) y entender qué canales de adquisición están funcionando mejor.</p>
+      </div>
+
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-magnifying-glass-chart"></i> 2. Google Search Console</h3>
+        <p>Si GA4 me dice qué hacen los usuarios <em>dentro</em> de la web, Search Console me dice cómo <em>llegan</em> desde Google. Es indispensable para cualquier estrategia SEO. Lo uso para detectar oportunidades de palabras clave, vigilar el CTR de las páginas y asegurarme de que no hay errores de indexación que estén frenando el tráfico.</p>
+      </div>
+
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-fire"></i> 3. Microsoft Clarity (o Hotjar)</h3>
+        <p>Los números de GA4 son fríos; los mapas de calor y grabaciones de sesión le ponen cara a esos datos. Cuando veo que una página tiene una alta tasa de rebote, recurro a herramientas de CRO como Clarity para ver si los usuarios se están atascando en algún formulario o si un botón no está claro. ¡Los datos cualitativos son oro!</p>
+      </div>
+
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-table"></i> 4. Excel / Google Sheets</h3>
+        <p>Puede sonar básico, pero es la realidad: ninguna herramienta de visualización supera a una buena hoja de cálculo cuando necesitas limpiar datos rápido, cruzar tablas dinámicas o hacer un análisis ad-hoc. Es el mejor amigo de cualquier analista junior (y senior).</p>
+      </div>
+
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-chart-line"></i> 5. Looker Studio (Data Studio)</h3>
+        <p>A los clientes o directivos no les gusta entrar en la interfaz compleja de GA4. Looker Studio me permite conectar todas las fuentes anteriores (GA4, Search Console, Google Ads) y crear dashboards interactivos, limpios y fáciles de entender para presentar los resultados a final de mes.</p>
+      </div>
+
+      <h2>Conclusión</h2>
+      <p>Dominar estas herramientas es solo el primer paso; el verdadero valor está en <strong>saber hacer las preguntas correctas a los datos</strong>. De nada sirve tener un dashboard precioso si no extraemos *insights* accionables que mejoren la estrategia de negocio.</p>
+
+      <p>¿Y tú? ¿Qué herramienta consideras imprescindible en tu día a día?</p>
+    </div>
+  </article>
+
+</main>
+
+<footer style="max-width: 800px; margin: 40px auto 0 auto; padding: 40px 20px; display: flex; align-items: center; gap: 20px; border-top: 1px solid #e5e7eb; color: var(--text-gray);">
+  <div class="social-icons"><a href="https://www.linkedin.com/in/f-a-r-m" target="_blank" style="color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; text-decoration: none;"><i class="fa-brands fa-linkedin"></i></a></div>
+  <p>© 2026 Francisco Robles</p>
+</footer>
+
+</body>
+</html>
