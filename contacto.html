@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4M2FDQX6DT"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4M2FDQX6DT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -96,10 +95,22 @@
     <p>© 2026 Francisco Robles</p>
   </footer>
 </main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav-links a");
+    
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      const href = link.getAttribute("href");
+      
+      // Si la URL coincide, añadimos la clase active
+      if (currentUrl.endsWith(href) || currentUrl.includes(href + ".html") || (currentUrl === "/" && href === "/sobre-mi")) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
 </body>
 </html>
-
-
-
-
-
