@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4M2FDQX6DT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4M2FDQX6DT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qué es el CRO y por qué lo necesitas | Francisco Robles</title>
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zisquito.github.io/articulos/que-es-cro">
+<meta property="og:title" content="Qué es el CRO y por qué tu web lo necesita | Francisco Robles">
+<meta property="og:image" content="https://zisquito.github.io/img/blog/cro_tarjeta.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://zisquito.github.io/articulos/que-es-cro">
+<meta name="twitter:title" content="Qué es el CRO y por qué tu web lo necesita | Francisco Robles">
+<meta name="twitter:image" content="https://zisquito.github.io/img/blog/cro_tarjeta.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root { --primary-blue: #0d6efd; --text-dark: #1f2937; --text-gray: #6b7280; --bg-light: #f4f7fb; --white: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+  body { background-color: var(--bg-light); color: var(--text-dark); background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  
+  /* NAVEGACIÓN */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 100; }
+  .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .brand { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .brand-subtitle { font-weight: 400; font-size: 0.9rem; color: var(--text-gray); display: flex; align-items: center; gap: 6px; }
+  .brand-subtitle::before { content: "•"; color: #93c5fd; font-size: 1.5rem; }
+  .brand-subtitle span { color: var(--primary-blue); font-weight: 600; }
+  .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; padding-bottom: 5px; transition: 0.3s; border-bottom: 3px solid transparent; }
+  .nav-links a.active { border-bottom: 3px solid var(--primary-blue); color: var(--primary-blue); }
+  .nav-links a:hover { color: var(--primary-blue); }
+  .btn-primary { background: var(--primary-blue); color: var(--white); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: 0.3s; }
+  .btn-primary:hover { background: #0b5ed7; }
+
+  /* ESTILOS ESPECÍFICOS DEL ARTÍCULO */
+  .back-link { display: inline-block; margin-top: 40px; color: var(--primary-blue); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .back-link:hover { text-decoration: underline; }
+  .article-header { padding: 30px 0 30px 0; text-align: center; border-bottom: 1px solid #e5e7eb; margin-bottom: 40px; }
+  .article-date { color: var(--text-gray); font-weight: 500; margin-bottom: 15px; display: block; font-size: 0.95rem; }
+  .article-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-dark); }
+  
+  .article-content { font-size: 1.15rem; line-height: 1.8; color: #4b5563; padding-bottom: 60px; }
+  .article-content h2 { font-size: 1.6rem; color: var(--text-dark); margin: 40px 0 15px 0; border-left: 4px solid var(--primary-blue); padding-left: 15px; }
+  .article-content p { margin-bottom: 25px; }
+  
+  /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
+  .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
+  .img-caption { text-align: center; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 30px; font-style: italic; }
+
+  /* CAJAS DE RESUMEN */
+  .insight-box { background: var(--white); padding: 25px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e5e7eb; border-left: 4px solid #10b981; }
+  .insight-box ul { padding-left: 20px; margin-top: 15px; }
+  .insight-box li { margin-bottom: 10px; }
+
+  /* FOOTER */
+  footer { display: flex; align-items: center; gap: 20px; padding: 40px 0; margin-top: 80px; border-top: 1px solid #e5e7eb; color: var(--text-gray); }
+  .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
+  .social-icons a:hover { color: var(--primary-blue); }
+  
+  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-content">
+    <div class="brand">Francisco Robles <div class="brand-subtitle">Marketing & Analytics <span>Junior</span></div></div>
+  <ul class="nav-links">
+  <li><a href="/sobre-mi">Sobre mí</a></li>
+  <li><a href="/blog">Blog</a></li>
+  <li><a href="/contacto">Contáctame</a></li>
+</ul>
+    <a href="/cv.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
+  </div>
+</nav>
+
+<main class="container">
+  
+  <a href="/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al Blog</a>
+
+  <article>
+    <header class="article-header">
+      <h1 class="article-title">Qué es el CRO y por qué tu web lo necesita urgentemente</h1>
+      <span class="article-date"><i class="fa-regular fa-calendar"></i> Marzo 2026 • Analítica y Conversión</span>
+    </header>
+
+    <div class="article-content">
+      <p>Imagina que tienes una tienda física preciosa. Te gastas un dineral en buzoneo, en anuncios de radio y en poner un escaparate increíble. Consigues que entren 1.000 personas al día en tu tienda. Pero, por algún motivo, la caja registradora está al fondo de un pasillo oscuro, los precios no se entienden y la puerta de salida está más a la vista que los propios productos.</p>
+      
+      <p>¿Qué pasará? Que esas 1.000 personas mirarán un poco, se frustrarán y se irán sin comprar nada. En el mundo digital, esto pasa todos los días. Y aquí es exactamente donde entra en juego el <strong>CRO</strong>.</p>
+
+      <h2>¿Qué es exactamente el CRO?</h2>
+      <p>CRO son las siglas de <em>Conversion Rate Optimization</em> (Optimización de la Tasa de Conversión). En palabras más sencillas: es el arte y la ciencia de conseguir que un mayor porcentaje de los usuarios que ya visitan tu web hagan lo que tú quieres que hagan. Ya sea comprar un producto, rellenar un formulario, descargar un PDF o suscribirse a una newsletter.</p>
+      
+      <p>Muchos negocios cometen el error de pensar que si quieren el doble de ventas, necesitan comprar el doble de tráfico (gastando el doble en Google Ads o Meta Ads). El CRO te propone un camino mucho más inteligente: <strong>en lugar de pagar para traer a más gente, vamos a convencer a los que ya están aquí</strong>.</p>
+
+      <img src="../img/blog/cro-grafico.jpg" alt="Gráfico de embudo de conversión y CRO">
+      <p class="img-caption">Optimizar el embudo de ventas siempre es más rentable que simplemente inyectar más tráfico en la parte superior.</p>
+
+      <h2>¿Por qué tu negocio necesita CRO?</h2>
+      <p>Dejar el CRO de lado es, literalmente, dejar dinero encima de la mesa. Cuando empiezas a medir y optimizar la experiencia del usuario, te das cuenta de varias cosas:</p>
+
+      <ul>
+        <li><strong>Aprovechas tu inversión en marketing:</strong> De nada sirve tener la mejor campaña de publicidad si tu página de aterrizaje (landing page) no funciona bien en móviles o el botón de compra falla.</li>
+        <li><strong>Tomas decisiones basadas en datos, no en opiniones:</strong> El CRO acaba con las discusiones de "yo creo que el botón debería ser verde" o "a mí me gusta más este texto". Se lanzan test A/B, se mide qué variante genera más ventas y los datos deciden por ti.</li>
+        <li><strong>Mejora la experiencia de usuario (UX):</strong> Al intentar que la gente compre más, inevitablemente tienes que hacerles la vida más fácil. Simplificas menús, aclaras textos y eliminas distracciones.</li>
+      </ul>
+
+      <div class="insight-box">
+        <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Cómo se trabaja el CRO en la vida real</h3>
+        <p>No se trata de cambiar cosas al azar a ver qué pasa. Sigue un método científico:</p>
+        <ul>
+          <li><strong>Análisis:</strong> Miramos Google Analytics o usamos mapas de calor (como Hotjar) para ver dónde se atascan los usuarios. ¿Llegan al carrito pero lo abandonan?</li>
+          <li><strong>Hipótesis:</strong> Creemos que la gente abandona el carrito porque los gastos de envío no se ven hasta el último paso y se asustan.</li>
+          <li><strong>Test A/B:</strong> Creamos una versión alternativa de la web donde los gastos de envío se ven desde el principio. La mitad del tráfico ve la web original y la otra mitad ve la nueva.</li>
+          <li><strong>Resultados:</strong> Analizamos cuál ha vendido más y aplicamos la ganadora definitivamente.</li>
+        </ul>
+      </div>
+
+      <h2>Conclusión</h2>
+      <p>Tener una página web bonita ya no es suficiente. El mercado digital es demasiado competitivo como para permitirte el lujo de tener "fugas" en tu embudo de ventas. El CRO es ese puente invisible entre el marketing que atrae miradas y las ventas reales que mantienen vivo el negocio.</p>
+      
+      <p>Si tu web tiene tráfico pero no convierte, antes de gastar un euro más en publicidad, pregúntate: <em>¿le estoy poniendo las cosas fáciles a mis clientes?</em></p>
+    </div>
+  </article>
+
+  <footer>
+    <div class="social-icons"><a href="https://www.linkedin.com/in/f-a-r-m" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+    <p>© 2026 Francisco Robles</p>
+  </footer>
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav-links a");
+    
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      const href = link.getAttribute("href");
+      
+      if (currentUrl.includes("/articulos/") && href === "/blog") {
+        link.classList.add("active");
+      } else if (currentUrl.endsWith(href) || currentUrl.includes(href + ".html") || (currentUrl === "/" && href === "/sobre-mi")) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>🍪 Utilizamos cookies de Google Analytics para medir las visitas de forma anónima y mejorar esta web. ¿Aceptas su uso?</p>
+    <div class="cookie-buttons">
+      <button id="reject-cookies" class="btn-cookie-secondary">Rechazar</button>
+      <button id="accept-cookies" class="btn-cookie-primary">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #ffffff; box-shadow: 0 -4px 15px rgba(0,0,0,0.05); padding: 15px 20px; z-index: 9999; display: none; justify-content: center; border-top: 1px solid #e5e7eb; font-family: 'Inter', sans-serif; }
+  .cookie-content { max-width: 1200px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center; }
+  @media (min-width: 768px) { .cookie-content { flex-direction: row; justify-content: space-between; text-align: left; } }
+  .cookie-content p { margin: 0; font-size: 0.95rem; color: #4b5563; }
+  .cookie-buttons { display: flex; gap: 10px; }
+  .btn-cookie-primary { background: var(--primary-blue, #0d6efd); color: #ffffff; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
+  .btn-cookie-primary:hover { background: #0b5ed7; }
+  .btn-cookie-secondary { background: #e5e7eb; color: #4b5563; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
+  .btn-cookie-secondary:hover { background: #d1d5db; }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const rejectBtn = document.getElementById("reject-cookies");
+
+    if (!localStorage.getItem("cookieConsent")) {
+      banner.style.display = "flex";
+    }
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "accepted");
+      banner.style.display = "none";
+    });
+    rejectBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "rejected");
+      banner.style.display = "none";
+    });
+  });
+</script>
+</body>
+</html>
