@@ -47,8 +47,13 @@
   
   /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
   .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
+  
+  /* Overrides para tamaños específicos */
   .img-logo { max-width: 250px !important; margin: 30px auto 10px auto !important; box-shadow: none !important; border: none !important; }
   .img-mobile { max-width: 280px !important; margin: 30px auto 10px auto !important; border-radius: 20px !important; box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important; }
+  /* NUEVA CLASE PARA REDUCIR GOOGLE BUSINESS */
+  .img-gbusiness { max-width: 450px !important; margin: 30px auto 10px auto !important; }
+
   .img-caption { text-align: center; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 30px; font-style: italic; }
 
   /* FOOTER */
@@ -56,7 +61,7 @@
   .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
   .social-icons a:hover { color: var(--primary-blue); }
   
-  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } }
+  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } .img-gbusiness { max-width: 100% !important; } }
 </style>
 </head>
 <body>
@@ -87,8 +92,8 @@
       <p>Todos los universitarios conocemos la misma escena: suenan las campanas del descanso, tienes exactamente 15 minutos para desconectar, llegas a la cafetería y te topas con una cola infinita. Al final, te pasas el recreo entero esperando un bocadillo o, directamente, decides no comprar nada para no perder el tiempo.</p>
       
       <p>A partir de esta situación tan cotidiana nació <strong>Unibite</strong>, una idea de negocio que desarrollamos mis compañeros y yo en la asignatura de Creación de Empresas. El concepto era sencillo: crear una plataforma donde los estudiantes pudieran consultar el menú y los precios y, lo más importante, pedir su comida con antelación para recogerla sin hacer fila.</p>
-
-<img src="../img/blog/unibite-logo.jpg" alt="Logo de Unibite" class="img-logo">
+ 
+      <img src="../img/blog/unibite-logo.jpg" alt="Logo de Unibite" class="img-logo">
       <p class="img-caption">Diseño del logo para el proyecto Unibite</p>
       
       <p>Para no basarnos solo en suposiciones, salimos a validar la idea. Encuestamos a bastantes estudiantes y hablamos con los trabajadores de varias cafeterías. Efectivamente, estábamos ante un problema real: los cuellos de botella en hora punta generaban frustración en los alumnos y hacían perder ventas a los locales.</p>
@@ -100,7 +105,7 @@
 
       <p>Además, para darle aspecto de negocio real, diseñamos la identidad visual y abrimos un perfil en Google Business antes de probarlo en la cafetería de nuestra propia facultad.</p>
 
-      <img src="../img/blog/unibite-google.jpg" alt="Perfil de Google Business de Unibite">
+      <img src="../img/blog/unibite-google.jpg" alt="Perfil de Google Business de Unibite" class="img-gbusiness">
       <p class="img-caption">Perfil de Google Business </p>
 
       <p>Y aquí fue donde nos dimos de bruces con la realidad. Desarrollar la tecnología y montar el bot tuvo su dificultad, por supuesto, pero la verdadera barrera no estaba ahí. Lo realmente complicado fue cambiar la forma de trabajar de la cafetería.</p>
