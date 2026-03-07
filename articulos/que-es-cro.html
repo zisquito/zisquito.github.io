@@ -160,47 +160,5 @@
     });
   });
 </script>
-
-<div id="cookie-banner" class="cookie-banner">
-  <div class="cookie-content">
-    <p>🍪 Utilizamos cookies de Google Analytics para medir las visitas de forma anónima y mejorar esta web. ¿Aceptas su uso?</p>
-    <div class="cookie-buttons">
-      <button id="reject-cookies" class="btn-cookie-secondary">Rechazar</button>
-      <button id="accept-cookies" class="btn-cookie-primary">Aceptar</button>
-    </div>
-  </div>
-</div>
-
-<style>
-  .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #ffffff; box-shadow: 0 -4px 15px rgba(0,0,0,0.05); padding: 15px 20px; z-index: 9999; display: none; justify-content: center; border-top: 1px solid #e5e7eb; font-family: 'Inter', sans-serif; }
-  .cookie-content { max-width: 1200px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center; }
-  @media (min-width: 768px) { .cookie-content { flex-direction: row; justify-content: space-between; text-align: left; } }
-  .cookie-content p { margin: 0; font-size: 0.95rem; color: #4b5563; }
-  .cookie-buttons { display: flex; gap: 10px; }
-  .btn-cookie-primary { background: var(--primary-blue, #0d6efd); color: #ffffff; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
-  .btn-cookie-primary:hover { background: #0b5ed7; }
-  .btn-cookie-secondary { background: #e5e7eb; color: #4b5563; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
-  .btn-cookie-secondary:hover { background: #d1d5db; }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const banner = document.getElementById("cookie-banner");
-    const acceptBtn = document.getElementById("accept-cookies");
-    const rejectBtn = document.getElementById("reject-cookies");
-
-    if (!localStorage.getItem("cookieConsent")) {
-      banner.style.display = "flex";
-    }
-    acceptBtn.addEventListener("click", () => {
-      localStorage.setItem("cookieConsent", "accepted");
-      banner.style.display = "none";
-    });
-    rejectBtn.addEventListener("click", () => {
-      localStorage.setItem("cookieConsent", "rejected");
-      banner.style.display = "none";
-    });
-  });
-</script>
 </body>
 </html>
