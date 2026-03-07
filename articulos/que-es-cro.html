@@ -58,6 +58,10 @@
   
   /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
   .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
+  
+  /* NUEVA CLASE PARA REDUCIR LA IMAGEN INTERNA DEL CRO */
+  .img-cro-interna { max-width: 550px !important; margin: 30px auto 10px auto !important; }
+
   .img-caption { text-align: center; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 30px; font-style: italic; }
 
   /* CAJAS DE RESUMEN */
@@ -70,14 +74,14 @@
   .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
   .social-icons a:hover { color: var(--primary-blue); }
   
-  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } }
+  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } .img-cro-interna { max-width: 100% !important; } }
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-content">
-    <div class="brand">Francisco Robles <div class="brand-subtitle">Marketing & Analytics <span>Junior</span></div></div>
+    <div class="brand">Francisco Robles <div class="brand-subtitle">Marketing & Analytics </div></div>
   <ul class="nav-links">
   <li><a href="/sobre-mi">Sobre mí</a></li>
   <li><a href="/blog">Blog</a></li>
@@ -107,7 +111,8 @@
       
       <p>Muchos negocios cometen el error de pensar que si quieren el doble de ventas, necesitan comprar el doble de tráfico (gastando el doble en Google Ads o Meta Ads). El CRO te propone un camino mucho más inteligente: <strong>en lugar de pagar para traer a más gente, vamos a convencer a los que ya están aquí</strong>.</p>
 
-      <img src="../img/blog/cro-grafico.jpg" >
+      <img src="../img/blog/cro-grafico.jpg" alt="Gráfico de embudo de conversión y CRO" class="img-cro-interna">
+      <p class="img-caption">Optimizar el embudo de ventas siempre es más rentable que simplemente inyectar más tráfico en la parte superior.</p>
 
       <h2>¿Por qué tu negocio necesita CRO?</h2>
       <p>Dejar el CRO de lado es, literalmente, dejar dinero encima de la mesa. Cuando empiezas a medir y optimizar la experiencia del usuario, te das cuenta de varias cosas:</p>
@@ -161,5 +166,3 @@
 </script>
 </body>
 </html>
-
-
