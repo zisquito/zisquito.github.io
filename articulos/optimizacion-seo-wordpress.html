@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4M2FDQX6DT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4M2FDQX6DT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optimización SEO básica para WordPress | Francisco Robles</title>
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zisquito.github.io/articulos/optimizacion-seo-wordpress">
+<meta property="og:title" content="Optimización SEO básica para WordPress | Francisco Robles">
+<meta property="og:image" content="https://zisquito.github.io/img/blog/seo_tarjeta.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://zisquito.github.io/articulos/optimizacion-seo-wordpress">
+<meta name="twitter:title" content="Optimización SEO básica para WordPress | Francisco Robles">
+<meta name="twitter:image" content="https://zisquito.github.io/img/blog/seo_tarjeta.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root { --primary-blue: #0d6efd; --text-dark: #1f2937; --text-gray: #6b7280; --bg-light: #f4f7fb; --white: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+  body { background-color: var(--bg-light); color: var(--text-dark); background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  
+  /* NAVEGACIÓN */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 100; }
+  .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .brand { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .brand-subtitle { font-weight: 400; font-size: 0.9rem; color: var(--text-gray); display: flex; align-items: center; gap: 6px; }
+  .brand-subtitle::before { content: "•"; color: #93c5fd; font-size: 1.5rem; }
+  .brand-subtitle span { color: var(--primary-blue); font-weight: 600; }
+  .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; padding-bottom: 5px; transition: 0.3s; border-bottom: 3px solid transparent; }
+  .nav-links a.active { border-bottom: 3px solid var(--primary-blue); color: var(--primary-blue); }
+  .nav-links a:hover { color: var(--primary-blue); }
+  .btn-primary { background: var(--primary-blue); color: var(--white); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: 0.3s; }
+  .btn-primary:hover { background: #0b5ed7; }
+
+  /* ESTILOS ESPECÍFICOS DEL ARTÍCULO */
+  .back-link { display: inline-block; margin-top: 40px; color: var(--primary-blue); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .back-link:hover { text-decoration: underline; }
+  .article-header { padding: 30px 0 30px 0; text-align: center; border-bottom: 1px solid #e5e7eb; margin-bottom: 40px; }
+  .article-date { color: var(--text-gray); font-weight: 500; margin-bottom: 15px; display: block; font-size: 0.95rem; }
+  .article-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-dark); }
+  
+  .article-content { font-size: 1.15rem; line-height: 1.8; color: #4b5563; padding-bottom: 60px; }
+  .article-content h2 { font-size: 1.6rem; color: var(--text-dark); margin: 40px 0 15px 0; border-left: 4px solid var(--primary-blue); padding-left: 15px; }
+  .article-content h3 { font-size: 1.3rem; color: var(--text-dark); margin: 30px 0 10px 0; }
+  .article-content p { margin-bottom: 25px; }
+  
+  /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
+  .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
+  
+  /* NUEVA CLASE PARA REDUCIR LA IMAGEN INTERNA DEL SEO */
+  .img-seo-interna { max-width: 600px !important; margin: 30px auto 10px auto !important; }
+
+  .img-caption { text-align: center; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 30px; font-style: italic; }
+
+  /* CAJAS DE RESUMEN */
+  .insight-box { background: var(--white); padding: 25px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e5e7eb; border-left: 4px solid #10b981; }
+  .insight-box ul { padding-left: 20px; margin-top: 15px; }
+  .insight-box li { margin-bottom: 10px; }
+
+  /* FOOTER */
+  footer { display: flex; align-items: center; gap: 20px; padding: 40px 0; margin-top: 80px; border-top: 1px solid #e5e7eb; color: var(--text-gray); }
+  .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
+  .social-icons a:hover { color: var(--primary-blue); }
+  
+  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } .img-seo-interna { max-width: 100% !important; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-content">
+    <div class="brand">Francisco Robles <div class="brand-subtitle">Marketing & Analytics <span>Junior</span></div></div>
+  <ul class="nav-links">
+  <li><a href="/sobre-mi">Sobre mí</a></li>
+  <li><a href="/blog">Blog</a></li>
+  <li><a href="/contacto">Contáctame</a></li>
+</ul>
+    <a href="/cv.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
+  </div>
+</nav>
+
+<main class="container">
+  
+  <a href="/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al Blog</a>
+
+  <article>
+    <header class="article-header">
+      <h1 class="article-title">Optimización SEO básica para WordPress: Por dónde empezar</h1>
+      <span class="article-date"><i class="fa-regular fa-calendar"></i> Marzo 2026 • SEO y Tráfico Orgánico</span>
+    </header>
+
+    <div class="article-content">
+      <p>Puedes tener la página web más bonita del mundo, con un diseño espectacular y un producto increíble. Pero si Google no sabe de qué va tu web, o peor aún, ni siquiera sabe que existe, nadie la va a visitar. Así de duro, pero así de real.</p>
+      
+      <p>WordPress es el rey absoluto de internet (mueve más del 40% de todas las páginas web). La buena noticia es que viene bastante preparado para el SEO de serie. La mala noticia es que si no configuras un par de cosas básicas, estarás perdiendo un tráfico orgánico valiosísimo. Aquí te cuento por dónde empiezo yo siempre a optimizar un WordPress.</p>
+
+      <h2>1. URLs amigables (Permalinks)</h2>
+      <p>Este es el error de novato número uno. Por defecto, muchas veces WordPress crea URLs que son un desastre visual, algo como <code>tusitio.com/?p=123</code>. Google odia esto, y los usuarios también.</p>
+      
+      <p>Lo primero que hay que hacer es ir a <em>Ajustes > Enlaces permanentes</em> y seleccionar la opción <strong>"Nombre de la entrada"</strong>. De esta forma, tus URLs pasarán a ser algo como <code>tusitio.com/optimizar-seo-wordpress</code>. Mucho más limpio, fácil de leer y, sobre todo, le dice a Google exactamente qué hay en esa página antes de entrar.</p>
+
+      <img src="../img/blog/seo-wordpress-guia.jpg" alt="Ajustes de SEO en WordPress" class="img-seo-interna">
+      <p class="img-caption">Configurar correctamente las herramientas y URLs es el primer paso indispensable.</p>
+
+      <h2>2. Instala un plugin de SEO (Yoast o Rank Math)</h2>
+      <p>WordPress necesita un "traductor" que le hable a Google en su idioma. Para eso existen los plugins de SEO. Durante años, <em>Yoast SEO</em> fue el rey indiscutible, pero últimamente <em>Rank Math</em> le está ganando mucho terreno porque es más ligero y ofrece más funciones gratis.</p>
+      
+      <p>Elijas el que elijas, estos plugins te permiten hacer lo más importante: <strong>escribir el Título y la Metadescripción</strong> que la gente verá en los resultados de búsqueda de Google. Piensa en esto como el escaparate de tu tienda. Si el título no llama la atención, nadie hará clic, por muy bueno que sea el contenido.</p>
+
+      <h2>3. La jerarquía de los encabezados (H1, H2, H3)</h2>
+      <p>Un error súper común es usar los encabezados (los famosos H2 o H3) simplemente para hacer la letra más grande o cambiar el diseño. ¡Craso error!</p>
+      
+      <p>Google lee tu web como si fuera un libro:</p>
+      <ul>
+        <li>El <strong>H1</strong> es el título del libro (solo debe haber uno por página).</li>
+        <li>Los <strong>H2</strong> son los capítulos principales.</li>
+        <li>Los <strong>H3</strong> son las secciones dentro de esos capítulos.</li>
+      </ul>
+      <p>Si respetas esta estructura lógica, a los robots de Google les resultará facilísimo escanear tu web y entender cuáles son las palabras clave más importantes de tu texto.</p>
+
+      <h2>4. El peso y el nombre de las imágenes</h2>
+      <p>Subir una foto directamente desde el móvil o la cámara que se llame <code>IMG_8472.JPG</code> y pese 4 MB es un crimen para el SEO. Primero, porque tu web cargará lentísimo (y Google penaliza las webs lentas). Segundo, porque estás perdiendo la oportunidad de posicionar en Google Imágenes.</p>
+
+      <div class="insight-box">
+        <h3><i class="fa-solid fa-check-double"></i> Mi checklist para las imágenes:</h3>
+        <ul>
+          <li><strong>Nombrarlas bien:</strong> Cambia el nombre del archivo antes de subirlo a algo descriptivo (ej: <code>zapatillas-nike-rojas.jpg</code>).</li>
+          <li><strong>Comprimirlas:</strong> Pásalas por una web como TinyPNG o usa un plugin como Smush para que pesen menos de 100-150 KB.</li>
+          <li><strong>El Texto Alternativo (ALT):</strong> Rellena siempre el campo "Texto alternativo" al subir la foto a WordPress. Es lo que leen las personas con discapacidad visual y los robots de Google para saber qué hay en la imagen.</li>
+        </ul>
+      </div>
+
+      <h2>Conclusión</h2>
+      <p>El SEO no es brujería, es sentido común y hacerle la vida fácil a los buscadores. No vas a posicionar el número uno mañana por cambiar una URL, porque el SEO es una maratón a medio-largo plazo. Pero si aplicas estas bases en tu WordPress desde el día uno, estarás construyendo sobre unos cimientos sólidos que tarde o temprano te traerán visitas recurrentes y gratuitas.</p>
+    </div>
+  </article>
+
+  <footer>
+    <div class="social-icons"><a href="https://www.linkedin.com/in/f-a-r-m" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+    <p>© 2026 Francisco Robles</p>
+  </footer>
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav-links a");
+    
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      const href = link.getAttribute("href");
+      
+      if (currentUrl.includes("/articulos/") && href === "/blog") {
+        link.classList.add("active");
+      } else if (currentUrl.endsWith(href) || currentUrl.includes(href + ".html") || (currentUrl === "/" && href === "/sobre-mi")) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+</body>
+</html>
