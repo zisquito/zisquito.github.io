@@ -28,8 +28,12 @@
 <meta name="twitter:description" content="Soy Francisco Robles, graduado en Marketing e Investigación de Mercados (UMA). Especializado en analítica digital, CRO y marketing online.">
 <meta name="twitter:image" content="https://zisquito.github.io/img/perfil.jpg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 <style>
   :root { --primary-blue: #0d6efd; --text-dark: #1f2937; --text-gray: #6b7280; --bg-light: #f4f7fb; --white: #ffffff; }
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
@@ -154,7 +158,12 @@
     </div>
     <div class="hero-image">
       <div class="image-backdrop"></div>
-      <div class="image-wrapper"><img src="img/perfil.jpg" alt="Francisco Robles"></div>
+      <div class="image-wrapper">
+        <picture>
+          <source srcset="img/perfil.webp" type="image/webp">
+          <img src="img/perfil.jpg" alt="Francisco Robles - Graduado en Marketing e Investigación de Mercados" width="600" height="673" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
     </div>
   </section>
   <div class="bottom-section">
@@ -167,7 +176,10 @@
         
         <a href="/articulos/herramientas-analitica" style="text-decoration: none; color: inherit; display: block;">
           <div class="blog-card">
-            <img src="img/blog/portada-analitica.jpg" alt="Portada del artículo" class="blog-card-img">
+            <picture>
+              <source srcset="img/blog/portada-analitica.webp" type="image/webp">
+              <img src="img/blog/portada-analitica.jpg" alt="Portada del artículo sobre herramientas de analítica digital" class="blog-card-img" width="800" height="244" loading="lazy" decoding="async">
+            </picture>
             <h4>5 Herramientas de Analítica Fundamentales</h4>
             <p>Febrero 2026</p>
             <div class="card-line"></div>
@@ -176,7 +188,10 @@
 
        <a href="/articulos/unibite" style="text-decoration: none; color: inherit; display: block;">
   <div class="blog-card">
-  <img src="/img/blog/unibite_tarjeta.jpg" alt="Portada del Proyecto Unibite" class="blog-card-img">
+  <picture>
+    <source srcset="/img/blog/unibite_tarjeta.webp" type="image/webp">
+    <img src="/img/blog/unibite_tarjeta.jpg" alt="Portada del Proyecto Unibite" class="blog-card-img" width="800" height="500" loading="lazy" decoding="async">
+  </picture>
     <h4>Proyecto Unibite: Idea de negocio en la facultad</h4>
     <p>Marzo 2026</p>
     <div class="card-line"></div>
