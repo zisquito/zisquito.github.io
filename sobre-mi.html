@@ -101,7 +101,8 @@
   .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
   .social-icons a:hover { color: var(--primary-blue); }
 
-  @media(max-width: 992px) { .hero { flex-direction: column; } .bottom-section { grid-template-columns: 1fr; } .image-backdrop { right: 0; width: 100%; } .image-wrapper img { max-width: 280px; margin: 0 auto; display: block; } }
+  @media(min-width: 993px) { .image-wrapper img { aspect-ratio: 450 / 504; } }
+  @media(max-width: 992px) { .hero { flex-direction: column; } .bottom-section { grid-template-columns: 1fr; } .image-backdrop { right: 0; width: 100%; } }
   @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .blog-grid { grid-template-columns: 1fr; } .brand-subtitle { display: none; } }
 </style>
 <script type="application/ld+json">
@@ -162,7 +163,7 @@
       <div class="image-wrapper">
         <picture>
           <source srcset="img/perfil.webp" type="image/webp">
-          <img src="img/perfil.jpg" alt="Francisco Robles - Graduado en Marketing e Investigación de Mercados" width="450" height="504" fetchpriority="high" decoding="async">
+          <img src="img/perfil.jpg" alt="Francisco Robles - Graduado en Marketing e Investigación de Mercados" fetchpriority="high" decoding="async">
         </picture>
       </div>
     </div>
