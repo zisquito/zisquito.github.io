@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4M2FDQX6DT"></script>
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://zisquito.github.io/articulos/auditoria-seo">
+  <meta property="og:title" content="Auditoría SEO de mi web: los errores que encontré | Francisco Andrés Robles Muñoz">
+  <meta property="og:description" content="Hice una auditoría SEO a mi propia web y encontré fallos básicos que afectaban a su visibilidad. Te cuento qué descubrí y cómo lo arreglé paso a paso.">
+  <meta property="og:image" content="https://zisquito.github.io/img/blog/auditoria-seo_tarjeta.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://zisquito.github.io/articulos/auditoria-seo">
+  <meta name="twitter:title" content="Auditoría SEO de mi web: los errores que encontré | Francisco Andrés Robles Muñoz">
+  <meta name="twitter:description" content="Hice una auditoría SEO a mi propia web y encontré fallos básicos que afectaban a su visibilidad. Te cuento qué descubrí y cómo lo arreglé paso a paso.">
+  <meta name="twitter:image" content="https://zisquito.github.io/img/blog/auditoria-seo_tarjeta.png">
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4M2FDQX6DT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hice una auditoría SEO a mi propia web y encontré fallos básicos que afectaban a su visibilidad. Te cuento qué descubrí y cómo lo arreglé paso a paso.">
+<meta name="author" content="Francisco Andrés Robles Muñoz">
+<link rel="canonical" href="https://zisquito.github.io/articulos/auditoria-seo">
+<title>Auditoría SEO de mi web | Francisco Andrés Robles Muñoz</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+<style>
+  :root { --primary-blue: #0d6efd; --text-dark: #1f2937; --text-gray: #6b7280; --bg-light: #f4f7fb; --white: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+  body { background-color: var(--bg-light); color: var(--text-dark); background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  
+  /* NAVEGACIÓN */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 100; }
+  .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .brand { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .brand-subtitle { font-weight: 400; font-size: 0.9rem; color: var(--text-gray); display: flex; align-items: center; gap: 6px; }
+  .brand-subtitle::before { content: "•"; color: #93c5fd; font-size: 1.5rem; }
+  .brand-subtitle span { color: var(--primary-blue); font-weight: 600; }
+  .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; padding-bottom: 5px; transition: 0.3s; border-bottom: 3px solid transparent; }
+  .nav-links a.active { border-bottom: 3px solid var(--primary-blue); color: var(--primary-blue); }
+  .nav-links a:hover { color: var(--primary-blue); }
+  .btn-primary { background: var(--primary-blue); color: var(--white); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: 0.3s; }
+  .btn-primary:hover { background: #0b5ed7; }
+
+  /* ESTILOS ESPECÍFICOS DEL ARTÍCULO */
+  .back-link { display: inline-block; margin-top: 40px; color: var(--primary-blue); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .back-link:hover { text-decoration: underline; }
+  .article-header { padding: 30px 0 30px 0; text-align: center; border-bottom: 1px solid #e5e7eb; margin-bottom: 40px; }
+  .article-date { color: var(--text-gray); font-weight: 500; margin-bottom: 15px; display: block; font-size: 0.95rem; }
+  .article-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-dark); }
+  
+  .article-content { font-size: 1.15rem; line-height: 1.8; color: #4b5563; padding-bottom: 60px; }
+  .article-content p { margin-bottom: 25px; }
+  
+  /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
+  .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
+  
+  .img-caption { text-align: center; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 30px; font-style: italic; }
+
+  /* ESTILOS PARA BLOQUES DE CÓDIGO */
+  .code-block { background: #1e293b; color: #e2e8f0; border-radius: 12px; padding: 20px 25px; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.7; overflow-x: auto; margin: 20px 0 30px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+  .code-block .tag { color: #f472b6; }
+  .code-block .attr { color: #7dd3fc; }
+  .code-block .value { color: #86efac; }
+  .code-block .comment { color: #64748b; }
+
+  /* SUBTÍTULOS DENTRO DEL ARTÍCULO */
+  .article-content h2 { font-size: 1.6rem; font-weight: 700; color: var(--text-dark); margin: 40px 0 20px 0; padding-bottom: 8px; border-bottom: 3px solid var(--primary-blue); display: inline-block; }
+
+  /* LISTAS DENTRO DEL ARTÍCULO */
+  .article-content ul { margin-bottom: 25px; padding-left: 25px; }
+  .article-content ul li { margin-bottom: 10px; }
+
+  /* FOOTER */
+  footer { display: flex; align-items: center; gap: 20px; padding: 40px 0; margin-top: 80px; border-top: 1px solid #e5e7eb; color: var(--text-gray); }
+  .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
+  .social-icons a:hover { color: var(--primary-blue); }
+  
+  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } .code-block { font-size: 0.8rem; padding: 15px; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Auditoría SEO de mi web: los errores que encontré",
+  "description": "Hice una auditoría SEO a mi propia web y encontré fallos básicos que afectaban a su visibilidad. Te cuento qué descubrí y cómo lo arreglé paso a paso.",
+  "url": "https://zisquito.github.io/articulos/auditoria-seo",
+  "image": "https://zisquito.github.io/img/blog/auditoria-seo_tarjeta.png",
+  "datePublished": "2026-03-08",
+  "author": {
+    "@type": "Person",
+    "name": "Francisco Andrés Robles Muñoz",
+    "url": "https://zisquito.github.io/sobre-mi"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Francisco Andrés Robles Muñoz"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zisquito.github.io/sobre-mi"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zisquito.github.io/blog"},
+      {"@type": "ListItem", "position": 3, "name": "Auditoría SEO", "item": "https://zisquito.github.io/articulos/auditoria-seo"}
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-content">
+    <div class="brand">Francisco Robles <div class="brand-subtitle">Marketing & Analytics </div></div>
+  <ul class="nav-links">
+  <li><a href="/sobre-mi">Sobre mí</a></li>
+  <li><a href="/blog">Blog</a></li>
+  <li><a href="/contacto">Contáctame</a></li>
+</ul>
+    <a href="/cv.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
+  </div>
+</nav>
+
+<main class="container">
+  
+  <a href="/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al Blog </a>
+
+  <article>
+    <header class="article-header">
+      <h1 class="article-title">Auditoría SEO de mi web: los errores que encontré</h1>
+      <span class="article-date"><i class="fa-regular fa-calendar"></i> Marzo 2026 • SEO Técnico</span>
+    </header>
+
+    <div class="article-content">
+      <p>Si algo me ha quedado claro estudiando marketing digital es que tener una web bonita no sirve de mucho si nadie la encuentra. Puedes tener el mejor contenido del mundo, pero si Google no entiende bien tu sitio, simplemente no lo va a mostrar. Con esa idea en la cabeza, decidí hacer algo que siempre había dejado para "mañana": sentarme a revisar el SEO de mi propia web.</p>
+      
+      <p>Lo que encontré fue un poco vergonzoso, la verdad. Errores básicos que yo mismo explico en mis artículos sobre SEO y que, paradójicamente, no estaba aplicando en mi propio sitio. Así que este post es una especie de confesión y, a la vez, una guía práctica de lo que hice para corregirlo.</p>
+
+      <h2>El punto de partida: ¿Qué fallaba?</h2>
+
+      <p>Analicé las ocho páginas de mi web (la home, sobre mí, blog, contacto y los cuatro artículos) buscando los elementos básicos que cualquier sitio necesita para ser rastreable e indexable por los motores de búsqueda. El resultado fue más o menos este: de los diez puntos clave que revisé, solo dos o tres estaban bien. El resto, o no existían o estaban a medias.</p>
+
+      <p>Los principales problemas eran de los que no se ven a simple vista. La web funcionaba perfectamente para un visitante humano, pero para los bots de Google le faltaba mucha información para entender qué era cada página, cómo se relacionaban entre sí y cuáles debía priorizar.</p>
+
+      <h2>Meta descriptions: lo primero que ve el usuario en Google</h2>
+
+      <p>Ninguna de mis ocho páginas tenía una <strong>meta description</strong>. Ninguna. Esto significa que cuando alguien busca en Google y mi web aparece (si aparece), el snippet que se muestra debajo del título es un fragmento aleatorio que Google elige por su cuenta. A veces es un texto coherente, pero muchas veces no tiene sentido y el usuario simplemente pasa de largo.</p>
+
+      <p>La solución fue sencilla: escribir una descripción personalizada para cada página. Algo que resuma bien el contenido y que invite a hacer clic. Por ejemplo, para la página de "Sobre mí" añadí esto:</p>
+
+      <div class="code-block">
+        <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="value">"description"</span> <span class="attr">content</span>=<span class="value">"Soy Francisco Andrés Robles Muñoz, graduado en Marketing e Investigación de Mercados. Especializado en analítica digital, CRO y marketing online."</span><span class="tag">&gt;</span>
+      </div>
+
+      <p>Una línea de código por página. Cinco minutos de trabajo que pueden marcar la diferencia en el CTR (porcentaje de clics) de cada resultado.</p>
+
+      <h2>Sitemap y robots.txt: los archivos que le hablan a Google</h2>
+
+      <p>Otro error de los gordos. Mi web no tenía ni <strong>sitemap.xml</strong> ni <strong>robots.txt</strong>. Para quien no los conozca: el sitemap es básicamente una lista de todas las páginas de tu sitio para que Google las encuentre rápido, y el robots.txt es un archivo que le dice a los bots qué pueden rastrear y dónde está el sitemap.</p>
+
+      <p>En una web pequeña como la mía, Google probablemente acabe encontrando todas las páginas de todos modos, pero tener estos archivos es una buena práctica. Es como dejarle un mapa al cartero en vez de esperar a que encuentre tu buzón por su cuenta.</p>
+
+      <p>Creé el <strong>sitemap.xml</strong> incluyendo todas las URLs del sitio con sus fechas de última modificación, y el <strong>robots.txt</strong> con la configuración más básica: permitir el acceso a todo y apuntar al sitemap.</p>
+
+      <div class="code-block">
+        <span class="comment">&lt;!-- robots.txt --&gt;</span><br>
+        User-agent: *<br>
+        Allow: /<br><br>
+        Sitemap: https://zisquito.github.io/sitemap.xml
+      </div>
+
+      <h2>URLs canónicas: evitar que Google se líe</h2>
+
+      <p>Este es un problema más sutil. En mi web, cada página se puede acceder con extensión (<strong>.html</strong>) y sin ella. Por ejemplo, <em>zisquito.github.io/blog</em> y <em>zisquito.github.io/blog.html</em> llevan al mismo sitio. Para un humano es lo mismo, pero Google las puede interpretar como dos páginas distintas con el mismo contenido. Eso es lo que se llama <strong>contenido duplicado</strong> y puede perjudicar el posicionamiento.</p>
+
+      <p>La solución es añadir una etiqueta <strong>canonical</strong> en cada página que le diga a Google: "Oye, la URL oficial de esta página es esta, ignora las demás".</p>
+
+      <div class="code-block">
+        <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="value">"canonical"</span> <span class="attr">href</span>=<span class="value">"https://zisquito.github.io/blog"</span><span class="tag">&gt;</span>
+      </div>
+
+      <h2>Open Graph: cómo se ve tu web cuando la compartes</h2>
+
+      <p>¿Alguna vez has pegado un enlace en WhatsApp o LinkedIn y ha aparecido una previsualización con imagen, título y descripción? Eso lo controlan las etiquetas <strong>Open Graph</strong> (y las equivalentes de Twitter Cards). Solo tres de mis ocho páginas las tenían, y encima ninguna incluía la descripción.</p>
+
+      <p>Completé las etiquetas OG en todas las páginas. Es un detalle que no afecta directamente al posicionamiento en Google, pero sí al tráfico que recibes cuando alguien comparte tu web. Un enlace con previsualización atractiva genera muchos más clics que uno que se ve como un texto plano.</p>
+
+      <h2>Otros ajustes más pequeños</h2>
+
+      <p>Además de los cambios principales, aproveché para corregir varias cosas menores que había ido dejando pasar:</p>
+
+      <ul>
+        <li><strong>Texto alternativo de las imágenes:</strong> los atributos <em>alt</em> existían pero eran demasiado genéricos. Los reescribí para que fueran más descriptivos y relevantes para SEO.</li>
+        <li><strong>Meta de autor:</strong> añadí la etiqueta <em>&lt;meta name="author"&gt;</em> en todas las páginas. Es un detalle pequeño pero ayuda a que Google asocie el contenido con una persona concreta.</li>
+        <li><strong>Rutas del CV inconsistentes:</strong> algunas páginas enlazaban al CV con rutas relativas (<em>cv.pdf</em>) y otras con absolutas (<em>/cv.pdf</em>). Las unifiqué todas a la ruta absoluta desde la raíz.</li>
+      </ul>
+
+      <h2>Lo que ya estaba bien</h2>
+
+      <p>No todo fueron errores. La auditoría también confirmó que algunos fundamentos estaban bien hechos: el idioma declarado correctamente con el <em>lang="es"</em>, un solo <em>&lt;h1&gt;</em> por página, uso de HTML semántico con etiquetas como <em>&lt;article&gt;</em> y <em>&lt;main&gt;</em>, títulos descriptivos y únicos, diseño responsive, favicon, Google Analytics implementado y peso de imágenes razonable.</p>
+
+      <p>Eso demuestra que no es que no supiera lo que hacía. Simplemente, cuando montas una web tiendes a centrarte en lo visual y en el contenido, y los detalles técnicos se quedan en un "ya lo haré" permanente.</p>
+
+      <h2>La lección</h2>
+
+      <p>Si hay algo que me llevo de este ejercicio es que <strong>el SEO técnico básico no es difícil, pero sí fácil de olvidar</strong>. Son cambios pequeños, casi todos de una o dos líneas de código, pero que acumulados pueden marcar una diferencia real en si Google muestra tu web o la ignora.</p>
+
+      <p>Mi recomendación para cualquiera que tenga una web propia: dedica una tarde a revisarla. No hace falta herramientas caras ni ser un experto. Con una checklist básica y ganas de mirar debajo del capó, probablemente encuentres cosas que mejorar. Yo lo hice con la mía y, aunque el resultado fue un poco bochornoso, al menos ahora sé que los cimientos están bien puestos.</p>
+    </div>
+  </article>
+
+  <footer>
+    <div class="social-icons"><a href="https://www.linkedin.com/in/f-a-r-m" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+    <p>© 2026 Francisco Robles</p>
+  </footer>
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav-links a");
+    
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      const href = link.getAttribute("href");
+      
+      if (currentUrl.includes("/articulos/") && href === "/blog") {
+        link.classList.add("active");
+      } else if (currentUrl.endsWith(href) || currentUrl.includes(href + ".html") || (currentUrl === "/" && href === "/sobre-mi")) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+</body>
+</html>
