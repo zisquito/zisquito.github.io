@@ -62,7 +62,15 @@
   .article-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-dark); }
   
   .article-content { font-size: 1.15rem; line-height: 1.8; color: #4b5563; padding-bottom: 60px; }
+  .article-content h2 { font-size: 1.6rem; color: var(--text-dark); margin: 40px 0 15px 0; border-left: 4px solid var(--primary-blue); padding-left: 15px; }
+  .article-content h3 { font-size: 1.3rem; color: var(--text-dark); margin: 30px 0 10px 0; }
   .article-content p { margin-bottom: 25px; }
+  
+  /* CAJAS DE RESUMEN */
+  .insight-box { background: var(--white); padding: 25px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e5e7eb; border-left: 4px solid #10b981; }
+  .insight-box ul { padding-left: 20px; margin-top: 15px; }
+  .insight-box li { margin-bottom: 10px; }
+  .insight-box p { margin-bottom: 0px !important; }
   
   /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
   .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
@@ -138,11 +146,13 @@
     <div class="article-content">
       <p>Todos los universitarios conocemos la misma escena: El momento de desconectar, tienes exactamente 30 minutos antes de regresar a clase, llegas a la cafetería y te topas con una cola infinita. Al final, te pasas el recreo entero esperando un bocadillo o, directamente, decides no comprar nada para no perder el tiempo.</p>
       
+      <h2>El nacimiento de Unibite</h2>
       <p>A partir de esta situación tan cotidiana nació <strong>Unibite</strong>, una idea de negocio que desarrollamos mis compañeros y yo en la asignatura de Creación de Empresas. El concepto era sencillo: crear una plataforma donde los estudiantes pudieran consultar el menú y los precios y, lo más importante, pedir su comida con antelación para recogerla sin hacer fila.</p>
  
       <img src="../img/blog/unibite-logo.webp" alt="Logo de Unibite" class="img-logo">
       <p class="img-caption">Diseño del logo para el proyecto Unibite</p>
       
+      <h2>La validación y el MVP</h2>
       <p>Para no basarnos solo en suposiciones, salimos a validar la idea. Encuestamos a bastantes estudiantes y hablamos con los trabajadores de varias cafeterías. Efectivamente, estábamos ante un problema real: los cuellos de botella en hora punta generaban frustración en los alumnos y hacían perder ventas a los locales.</p>
 
       <p>Decidimos empezar de la forma más sencilla posible. Para la prueba piloto, montamos un producto mínimo viable muy básico: un bot de WhatsApp. Los alumnos le escribían para consultar la carta y hacer su pedido.</p>
@@ -155,12 +165,16 @@
       <img src="../img/blog/unibite-google.webp" alt="Perfil de Google Business de Unibite" class="img-gbusiness">
       <p class="img-caption">Perfil de Google Business </p>
 
+      <h2>El choque de realidad</h2>
       <p>Y aquí fue donde nos dimos de bruces con la realidad. Desarrollar la tecnología y montar el bot tuvo su dificultad, por supuesto, pero la verdadera barrera no estaba ahí. Lo realmente complicado fue cambiar la forma de trabajar de la cafetería.</p>
       
       <p>De repente, el personal tenía que dejar de mirar solo a la barra para estar pendiente de un móvil por si llegaban pedidos digitales. Nos dimos cuenta de que la plataforma es un punto crítico, sí, pero entender cómo se integra en la rutina diaria de un trabajador con prisas es lo que marca la diferencia entre el éxito y el fracaso.</p>
       
-      <p>Convencer a los dueños de negocios tradicionales para que cambien sus dinámicas y compren un servicio que nunca han usado es todo un reto. Esa fue la gran lección del proyecto: la tecnología es solo una parte de la ecuación. Comercializar el servicio, vencer las resistencias internas y ganarte la confianza del cliente B2B es el verdadero desafío de cualquier idea de negocio.</p>
+      <div class="insight-box">
+        <p><strong>La gran lección:</strong> Convencer a los dueños de negocios tradicionales para que cambien sus dinámicas y compren un servicio que nunca han usado es todo un reto. La tecnología es solo una parte de la ecuación. Comercializar el servicio, vencer las resistencias internas y ganarte la confianza del cliente B2B es el verdadero desafío de cualquier idea de negocio.</p>
+      </div>
 
+      <h2>Próximos pasos</h2>
       <p>Quién sabe, quizá en un futuro mis compañeros y yo retomemos Unibite para hacerlo realidad. Ahora sabemos que, además de pulir la tecnología, necesitaremos una estrategia mucho más fina para implementarla con éxito y llegar al cliente final.</p>
     </div>
   </article>
