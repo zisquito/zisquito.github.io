@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4M2FDQX6DT"></script>
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://zisquito.github.io/articulos/agentes-ia-mcp">
+  <meta property="og:title" content="De la gestión manual a la IA: Mi transición a Antigravity y MCP | Francisco Andrés Robles Muñoz">
+  <meta property="og:description" content="Cómo cambié de manejar mi web manualmente a utilizar agentes de IA con Antigravity y conectar herramientas de analítica como GA4 y GSC a través de MCP.">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://zisquito.github.io/articulos/agentes-ia-mcp">
+  <meta name="twitter:title" content="De la gestión manual a la IA: Mi transición a Antigravity y MCP | Francisco Andrés Robles Muñoz">
+  <meta name="twitter:description" content="Cómo cambié de manejar mi web manualmente a utilizar agentes de IA con Antigravity y conectar herramientas de analítica como GA4 y GSC a través de MCP.">
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4M2FDQX6DT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://zisquito.github.io/articulos/agentes-ia-mcp">
+<meta name="description" content="Cómo cambié de manejar mi web manualmente a utilizar agentes de IA con Antigravity y conectar herramientas de analítica como GA4 y GSC a través de MCP.">
+<meta name="author" content="Francisco Andrés Robles Muñoz">
+<title>De la gestión manual a la IA: Mi experiencia con Antigravity y MCP | Francisco Andrés Robles Muñoz</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+<style>
+  :root { --primary-blue: #0d6efd; --text-dark: #1f2937; --text-gray: #6b7280; --bg-light: #f4f7fb; --white: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+  body { background-color: var(--bg-light); color: var(--text-dark); background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  
+  /* NAVEGACIÓN */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 100; }
+  .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .brand { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .brand-subtitle { font-weight: 400; font-size: 0.9rem; color: var(--text-gray); display: flex; align-items: center; gap: 6px; }
+  .brand-subtitle::before { content: "•"; color: #93c5fd; font-size: 1.5rem; }
+  .brand-subtitle span { color: var(--primary-blue); font-weight: 600; }
+  .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; padding-bottom: 5px; transition: 0.3s; border-bottom: 3px solid transparent; }
+  .nav-links a.active { border-bottom: 3px solid var(--primary-blue); color: var(--primary-blue); }
+  .nav-links a:hover { color: var(--primary-blue); }
+  .btn-primary { background: var(--primary-blue); color: var(--white); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: 0.3s; }
+  .btn-primary:hover { background: #0b5ed7; }
+
+  /* ESTILOS ESPECÍFICOS DEL ARTÍCULO */
+  .back-link { display: inline-block; margin-top: 40px; color: var(--primary-blue); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .back-link:hover { text-decoration: underline; }
+  .article-header { padding: 30px 0 30px 0; text-align: center; border-bottom: 1px solid #e5e7eb; margin-bottom: 40px; }
+  .article-date { color: var(--text-gray); font-weight: 500; margin-bottom: 15px; display: block; font-size: 0.95rem; }
+  .article-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-dark); }
+  
+  .article-content { font-size: 1.15rem; line-height: 1.8; color: #4b5563; padding-bottom: 60px; }
+  .article-content h2 { font-size: 1.6rem; color: var(--text-dark); margin: 40px 0 15px 0; border-left: 4px solid var(--primary-blue); padding-left: 15px; }
+  .article-content h3 { font-size: 1.3rem; color: var(--text-dark); margin: 30px 0 10px 0; }
+  .article-content p { margin-bottom: 25px; }
+  
+  /* CAJAS DE RESUMEN */
+  .insight-box { background: var(--white); padding: 25px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e5e7eb; border-left: 4px solid #10b981; }
+  .insight-box ul { padding-left: 20px; margin-top: 15px; }
+  .insight-box li { margin-bottom: 10px; }
+  .insight-box p { margin-bottom: 0px !important; }
+  
+  /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
+  .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
+  
+  .img-caption { text-align: center; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 30px; font-style: italic; }
+
+  /* FOOTER */
+  footer { display: flex; align-items: center; gap: 20px; padding: 40px 0; margin-top: 80px; border-top: 1px solid #e5e7eb; color: var(--text-gray); }
+  .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
+  .social-icons a:hover { color: var(--primary-blue); }
+  
+  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "De la gestión manual a la IA: Mi transición a Antigravity y MCP",
+  "description": "Cómo cambié de manejar mi web manualmente a utilizar agentes de IA con Antigravity y conectar herramientas de analítica como GA4 y GSC a través de MCP.",
+  "url": "https://zisquito.github.io/articulos/agentes-ia-mcp",
+  "datePublished": "2026-03-22",
+  "author": {
+    "@type": "Person",
+    "name": "Francisco Andrés Robles Muñoz",
+    "url": "https://zisquito.github.io/sobre-mi"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Francisco Andrés Robles Muñoz"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zisquito.github.io/sobre-mi"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zisquito.github.io/blog"},
+      {"@type": "ListItem", "position": 3, "name": "Agentes, IA y MCP", "item": "https://zisquito.github.io/articulos/agentes-ia-mcp"}
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-content">
+    <div class="brand">Francisco Robles <div class="brand-subtitle">Marketing & Analytics </div></div>
+  <ul class="nav-links">
+  <li><a href="/sobre-mi">Sobre mí</a></li>
+  <li><a href="/blog">Blog</a></li>
+  <li><a href="/contacto">Contáctame</a></li>
+</ul>
+    <a href="/CV_FranciscoRobles.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
+  </div>
+</nav>
+
+<main class="container">
+  
+  <a href="/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al Blog </a>
+
+  <article>
+    <header class="article-header">
+      <h1 class="article-title">De la gestión manual a la IA: Mi transición a Antigravity y MCP para esta web</h1>
+      <span class="article-date"><i class="fa-regular fa-calendar"></i> Marzo 2026 • Innovación y Tecnología</span>
+    </header>
+
+    <div class="article-content">
+      <p>Hasta hace poco, la gestión de esta misma web seguía el proceso tradicional que muchos desarrolladores y creadores de contenido conocen al dedillo. Un entorno de desarrollo local, abrir el editor de código, escribir el HTML o CSS a mano, revisar que todo estuviera en su sitio, hacer un <em>commit</em> y subir los cambios al repositorio. Era un proceso casi artesanal, pero que requería tiempo y atención al detalle, sobre todo cuando tocaba actualizar contenidos o revisar métricas.</p>
+      
+      <h2>El salto a la Inteligencia Artificial con Antigravity</h2>
+      <p>Todo cambió cuando decidí integrar agentes de IA en mi flujo de trabajo, concretamente utilizando <strong>Antigravity</strong>. De repente, mi papel pasó de ser un "picador de código" a ser un director de orquesta. En lugar de escribir cada línea de marcado, ahora simplemente le pido al agente en lenguaje natural qué es lo que quiero cambiar u optimizar en la web, ya sea escribir un nuevo artículo para el blog, hacer un ajuste de diseño o llevar a cabo una mejora de rendimiento y SEO.</p>
+
+      <p>El agente se encarga de analizar los archivos de la web, proponer los cambios y ejecutarlos. Esta transición de lo cien por cien manual a lo automatizado me ha permitido centrarme mucho más en la estrategia y en la calidad del contenido, dejando a un lado las interminables horas peleándome con etiquetas HTML y propiedades CSS.</p>
+      
+      <h2>La verdadera revolución: El protocolo MCP</h2>
+      <p>Sin embargo, donde realmente he notado un antes y un después es en la integración de herramientas de mi día a día a través del protocolo <strong>MCP (Model Context Protocol)</strong>. Para los que os dedicáis al mundo de la analítica digital y el SEO, sabéis lo tedioso que puede ser saltar constantemente entre el código de la web y los paneles de control de plataformas como Google Search Console o Google Analytics 4 (GA4) para comprobar si todo está funcionando y rindiendo como debe.</p>
+      
+      <p>Gracias a MCP, los agentes de IA de Antigravity ahora "hablan" directamente con estas herramientas de analítica. Puedo simplemente decirle al agente: "Revisa si hay algún problema de indexación en Google Search Console para los últimos artículos", o "A través del servidor MCP analiza los datos y dame un reporte de rendimiento SEO". El agente realiza la consulta directa, procesa los datos y me ofrece un resumen claro o, lo que es aún más alucinante, propone y aplica directamente las optimizaciones necesarias en el propio código de la web.</p>
+
+      <div class="insight-box">
+        <p><strong>El verdadero valor:</strong> La combinación de IA generativa y conexiones en tiempo real mediante el estándar MCP rompe los silos. Las herramientas de analítica digital y el entorno de desarrollo web ya no son mundos completamente separados, sino un ecosistema fluido y conectado donde las decisiones o auditorías se realizan y ejecutan casi al instante de forma asistida.</p>
+      </div>
+
+      <h2>Mirando al futuro</h2>
+      <p>Dar el salto a este entorno de desarrollo asistido por IA me ha ahorrado muchísimas horas de trabajo rutinario y me ha brindado una nueva y fascinante perspectiva sobre cómo gestionar e iterar proyectos digitales en solitario. Ya no se trata de a qué velocidad picas código, sino de lo bien que puedes estructurar tareas, orquestar a tus agentes y conectar tus herramientas predilectas para multiplicar tus capacidades y lograr tus objetivos.</p>
+      
+      <p>Si aún gestionáis vuestras webs al estilo más purista y "clásico", os animo enormemente a que le deis una oportunidad a asistentes como Antigravity y exploréis ese ecosistema tan potente que se está formando alrededor de MCP. Es un salto que redefine el día a día y transforma por completo tu forma de trabajar en el ecosistema digial.</p>
+    </div>
+  </article>
+
+  <footer>
+    <div class="social-icons"><a href="https://www.linkedin.com/in/f-a-r-m" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+    <p>© 2026 Francisco Robles</p>
+  </footer>
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav-links a");
+    
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      const href = link.getAttribute("href");
+      
+      if (currentUrl.includes("/articulos/") && href === "/blog") {
+        link.classList.add("active");
+      } else if (currentUrl.endsWith(href) || currentUrl.includes(href + ".html") || (currentUrl === "/" && href === "/sobre-mi")) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+</body>
+</html>
