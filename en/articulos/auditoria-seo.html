@@ -27,7 +27,7 @@
 <meta name="description" content="Hice una auditoría SEO a mi propia web y encontré fallos básicos que afectaban a su visibilidad. Te cuento qué descubrí y cómo lo arreglé paso a paso.">
 <meta name="author" content="Francisco Andrés Robles Muñoz">
 <link rel="canonical" href="https://zisquito.github.io/articulos/auditoria-seo">
-<title>Auditoría SEO de mi web | Francisco Andrés Robles Muñoz</title>
+<title>SEO audit of my website | Francisco Andrés Robles Muñoz</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,7 +150,7 @@
   <li><a href="/en/blog">Blog</a></li>
   <li><a href="/en/contacto">Contact me</a></li>
 </ul>
-    <button id="langToggle" aria-label="Cambiar a Español" onclick="window.location.href='/articulos/auditoria-seo';" style="background: none; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background='rgba(128,128,128,0.1)'" onmouseout="this.style.background='none'">ES</button>
+    <button id="langToggle" aria-label="Switch to Spanish" onclick="window.location.href='/articulos/auditoria-seo';" style="background: none; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background='rgba(128,128,128,0.1)'" onmouseout="this.style.background='none'">ES</button>
     <button id="darkModeToggle" aria-label="Toggle dark mode" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'"><i class="fa-solid fa-moon"></i></button>
     <a href="/CV_FranciscoRobles.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
   </div>
@@ -163,7 +163,7 @@
   <article>
     <header class="article-header">
       <h1 class="article-title">SEO audit of my website: the errors I found</h1>
-      <span class="article-date"><i class="fa-regular fa-calendar"></i> Marzo 2026 • SEO Técnico</span>
+      <span class="article-date"><i class="fa-regular fa-calendar"></i> March 2026 • Technical SEO</span>
     </header>
 
     <div class="article-content">
@@ -179,7 +179,7 @@
 
       <h2>Meta descriptions: the first thing the user sees on Google</h2>
 
-      <p>Ninguna de mis ocho páginas tenía una <strong>meta description</strong>. None. This means that when someone searches on Google and my website appears (if it appears), the snippet shown below the title is a random snippet that Google chooses on its own. Sometimes it is a coherent text, but many times it does not make sense and the user simply moves on.</p>
+      <p>None of my eight pages had a <strong>meta description</strong>. None. This means that when someone searches on Google and my website appears (if it appears), the snippet shown below the title is a random snippet that Google chooses on its own. Sometimes it is a coherent text, but many times it does not make sense and the user simply moves on.</p>
 
       <p>The solution was simple: write a custom description for each page. Something that summarizes the content well and invites you to click. For example, for the "About me" page I added this:</p>
 
@@ -191,11 +191,11 @@
 
       <h2>Sitemap and robots.txt: the files that speak to Google</h2>
 
-      <p>Otro error de los gordos. Mi web no tenía ni <strong>sitemap.xml</strong> nor <strong>robots.txt</strong>. For those who don't know: the sitemap is basically a list of all the pages on your site so that Google can find them quickly, and the robots.txt is a file that tells bots what they can crawl and where the sitemap is.</p>
+      <p>Another big mistake. My website didn't even have <strong>sitemap.xml</strong> nor <strong>robots.txt</strong>. For those who don't know: the sitemap is basically a list of all the pages on your site so that Google can find them quickly, and the robots.txt is a file that tells bots what they can crawl and where the sitemap is.</p>
 
       <p>On a small website like mine, Google will probably end up finding all the pages anyway, but having these files is good practice. It's like leaving a map for the postman instead of waiting for him to find your mailbox on his own.</p>
 
-      <p>Creé el <strong>sitemap.xml</strong> including all site URLs with their last modified dates, and the <strong>robots.txt</strong> con la configuración más básica: permitir el acceso a todo y apuntar al sitemap.</p>
+      <p>I created the <strong>sitemap.xml</strong> including all site URLs with their last modified dates, and the <strong>robots.txt</strong> with the most basic configuration: allow access to everything and point to the sitemap.</p>
 
       <div class="code-block">
         <span class="comment"><!-- robots.txt --></span><br>
@@ -206,9 +206,9 @@
 
       <h2>Canonical URLs: avoid Google getting messed up</h2>
 
-      <p>This is a more subtle problem. On my website, each page can be accessed with extension (<strong>.html</strong>) y sin ella. Por ejemplo, <em>zisquito.github.io/blog</em> and <em>zisquito.github.io/blog.html</em> They lead to the same place. For a human it is the same, but Google can interpret them as two different pages with the same content. That's what it's called <strong>duplicate content</strong> y puede perjudicar el posicionamiento.</p>
+      <p>This is a more subtle problem. On my website, each page can be accessed with extension (<strong>.html</strong>) and without it. For example, <em>zisquito.github.io/blog</em> and <em>zisquito.github.io/blog.html</em> They lead to the same place. For a human it is the same, but Google can interpret them as two different pages with the same content. That's what it's called <strong>duplicate content</strong> and can harm positioning.</p>
 
-      <p>La solución es añadir una etiqueta <strong>canonical</strong> en cada página que le diga a Google: "Oye, la URL oficial de esta página es esta, ignora las demás".</p>
+      <p>The solution is to add a tag <strong>canonical</strong> on every page you tell Google: "Hey, the official URL for this page is this, ignore the others."</p>
 
       <div class="code-block">
         <span class="tag"><link</span> <span class="attr">rel</span>=<span class="value">"canonical"</span> <span class="attr">href</span>=<span class="value">"https://zisquito.github.io/blog"</span><span class="tag">></span>
@@ -216,7 +216,7 @@
 
       <h2>Open Graph: what your website looks like when you share it</h2>
 
-      <p>¿Alguna vez has pegado un enlace en WhatsApp o LinkedIn y ha aparecido una previsualización con imagen, título y descripción? Eso lo controlan las etiquetas <strong>Open Graph</strong> (y las equivalentes de Twitter Cards). Solo tres de mis ocho páginas las tenían, y encima ninguna incluía la descripción.</p>
+      <p>Have you ever pasted a link on WhatsApp or LinkedIn and a preview appeared with an image, title and description? The labels control that. <strong>Open Graph</strong> (y las equivalentes de Twitter Cards). Solo tres de mis ocho páginas las tenían, y encima ninguna incluía la descripción.</p>
 
       <p>I completed the OG tags on all pages. It is a detail that does not directly affect positioning in Google, but it does affect the traffic you receive when someone shares your website. A link with an attractive preview generates many more clicks than one that looks like plain text.</p>
 
@@ -225,20 +225,20 @@
       <p>In addition to the main changes, I took the opportunity to correct several minor things that I had been missing:</p>
 
       <ul>
-        <li><strong>Alternative text for images:</strong> the attributes <em>alt</em> existían pero eran demasiado genéricos. Los reescribí para que fueran más descriptivos y relevantes para SEO.</li>
-        <li><strong>Author goal:</strong> I added the tag <em><meta name="author"></em> en todas las páginas. Es un detalle pequeño pero ayuda a que Google asocie el contenido con una persona concreta.</li>
-        <li><strong>Inconsistent CV paths:</strong> algunas páginas enlazaban al CV con rutas relativas (<em>CV_FranciscoRobles.pdf</em>) and others with absolutes (<em>/CV_FranciscoRobles.pdf</em>). I unified them all to the absolute path from the root.</li>
+        <li><strong>Alternative text for images:</strong> the attributes <em>alt</em> They existed but were too generic. I rewrote them to be more descriptive and SEO relevant.</li>
+        <li><strong>Author goal:</strong> I added the tag <em><meta name="author"></em> on all pages. It's a small detail but it helps Google associate the content with a specific person.</li>
+        <li><strong>Inconsistent CV paths:</strong> some pages linked to the CV with relative paths (<em>CV_FranciscoRobles.pdf</em>) and others with absolutes (<em>/CV_FranciscoRobles.pdf</em>). I unified them all to the absolute path from the root.</li>
       </ul>
 
       <h2>What was already good</h2>
 
-      <p>No todo fueron errores. La auditoría también confirmó que algunos fundamentos estaban bien hechos: el idioma declarado correctamente con el <em>lang="en"</em>, un solo <em><h1></em> per page, use of semantic HTML with tags like <em><article></em> and <em><main></em>, descriptive and unique titles, responsive design, favicon, Google Analytics implemented and reasonable image weight.</p>
+      <p>It wasn't all mistakes. The audit also confirmed that some fundamentals were done well: the language declared correctly with the <em>lang="en"</em>, a single <em><h1></em> per page, use of semantic HTML with tags like <em><article></em> and <em><main></em>, descriptive and unique titles, responsive design, favicon, Google Analytics implemented and reasonable image weight.</p>
 
       <p>That shows that it's not that he didn't know what he was doing. Simply put, when you set up a website you tend to focus on the visual and the content, and the technical details remain a permanent "I'll do it."</p>
 
       <h2>The lesson</h2>
 
-      <p>Si hay algo que me llevo de este ejercicio es que <strong>Basic technical SEO is not difficult, but it is easy to forget</strong>. They are small changes, almost all of them one or two lines of code, but when accumulated they can make a real difference in whether Google shows your website or ignores it.</p>
+      <p>If there is something that I take away from this exercise, it is that <strong>Basic technical SEO is not difficult, but it is easy to forget</strong>. They are small changes, almost all of them one or two lines of code, but when accumulated they can make a real difference in whether Google shows your website or ignores it.</p>
 
       <p>My recommendation for anyone who has their own website: spend an afternoon reviewing it. You don't need expensive tools or be an expert. With a basic checklist and a willingness to look under the hood, you'll probably find things to improve. I did it with mine and, although the result was a bit embarrassing, at least now I know that the foundations are well laid.</p>
     </div>

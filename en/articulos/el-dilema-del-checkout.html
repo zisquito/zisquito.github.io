@@ -14,7 +14,7 @@
 <link rel="canonical" href="https://zisquito.github.io/articulos/el-dilema-del-checkout">
 <meta name="description" content="Proyecto práctico de CRO y Analítica Digital: por qué obligar al usuario a registrarse en el checkout destruye las conversiones de un e-commerce.">
 <meta name="author" content="Francisco Andrés Robles Muñoz">
-<title>El dilema del Checkout y el coste de la fricción | Francisco Andrés Robles Muñoz</title>
+<title>The Checkout dilemma and the cost of friction | Francisco Andrés Robles Muñoz</title>
 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://zisquito.github.io/articulos/el-dilema-del-checkout">
@@ -143,7 +143,7 @@
   <li><a href="/en/blog">Blog</a></li>
   <li><a href="/en/contacto">Contact me</a></li>
 </ul>
-    <button id="langToggle" aria-label="Cambiar a Español" onclick="window.location.href='/articulos/el-dilema-del-checkout';" style="background: none; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background='rgba(128,128,128,0.1)'" onmouseout="this.style.background='none'">ES</button>
+    <button id="langToggle" aria-label="Switch to Spanish" onclick="window.location.href='/articulos/el-dilema-del-checkout';" style="background: none; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background='rgba(128,128,128,0.1)'" onmouseout="this.style.background='none'">ES</button>
     <button id="darkModeToggle" aria-label="Toggle dark mode" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'"><i class="fa-solid fa-moon"></i></button>
     <a href="/CV_FranciscoRobles.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
   </div>
@@ -151,55 +151,55 @@
 
 <main class="container">
   
-  <a href="/en/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al Blog</a>
+  <a href="/en/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Return to Blog</a>
 
   <article>
     <header class="article-header">
       <h1 class="article-title">The Checkout Dilemma and the Hidden Cost of Friction</h1>
-      <span class="article-date"><i class="fa-regular fa-calendar"></i> Marzo 2026 • CRO y Analítica Digital</span>
+      <span class="article-date"><i class="fa-regular fa-calendar"></i> March 2026 • CRO and Digital Analytics</span>
     </header>
 
     <div class="article-content">
-      <img src="../img/blog/cro.webp" alt="Gráficas y elementos de embudo de conversión indicando análisis CRO">
+      <img src="/img/blog/cro.webp" alt="Gráficas y elementos de embudo de conversión indicando análisis CRO">
       
       <p>Have you ever abandoned a shopping cart because the store forced you to create an account? Surely yes. We've all done it at some point.</p>
       
       <p>This is a practical exercise that I have set up to illustrate something I see every day: how data should rule over opinions when making decisions. To make it more visual, I have proposed a super typical scenario today: the classic e-commerce that puts a lot of money into Ads, attracts a lot of traffic, but then the numbers don't work out because of friction.</p>
 
       <h2>The basic problem</h2>
-      <p>Si miramos un embudo de conversión típico, el panorama suele ser este: entran miles de usuarios, pero el <strong>84% abandon the cart</strong>. Basically, we're throwing marketing money down the drain on the last inch.</p>
+      <p>If we look at a typical conversion funnel, the scenario is usually this: thousands of users enter, but the <strong>84% abandon the cart</strong>. Basically, we're throwing marketing money down the drain on the last inch.</p>
 
       <p>If we were to set up a Funnel Scan in GA4, we would see a drop similar to this:</p>
       <ul>
         <li>Users who add to cart: 100%</li>
         <li>Users who start Checkout: 75%</li>
-        <li>Usuarios que llegan a <em>"Create your account to pay"</em>: 70%</li>
+        <li>Users who reach <em>"Create your account to pay"</em>: 70%</li>
         <li><strong>Users who go on to add address: 14%</strong></li>
       </ul>
       <br>
       <p>The problem is very clear: almost 80% of the people who already got the card back out as soon as we ask them to register out of obligation.</p>
 
       <h2>The Business Dilemma</h2>
-      <p>Desde el punto de vista del CRO y la analítica, la solución no tiene mucho debate: <strong>You have to set a "Guest Checkout" right now</strong>.</p>
+      <p>From a CRO and analytics point of view, the solution doesn't have much debate: <strong>You have to set a "Guest Checkout" right now</strong>.</p>
       
-      <p>Pero claro, en el mundo real aquí es donde te topas con otros departamentos. Marketing podría quejarse: <em>"If we let them buy as guests, we are left without their email to send them the newsletter and do retargeting. We can't lose those leads."</em></p>
+      <p>But of course, in the real world this is where you run into other departments. Marketing might complain: <em>"If we let them buy as guests, we are left without their email to send them the newsletter and do retargeting. We can't lose those leads."</em></p>
 
       <h2>The solution: let the data speak</h2>
       <p>To avoid getting into "I think..." wars, your best bet is to set up a quick A/B Test and divide the traffic in half:</p>
       
       <div class="insight-box">
-        <p><strong>Version A (Control):</strong> Flujo original con registro obligatorio.<br>
-        <strong>Version B (Variant):</strong> Nuevo flujo con "Pago como invitado".</p>
+        <p><strong>Version A (Control):</strong> Original flow with mandatory registration.<br>
+        <strong>Version B (Variant):</strong> New flow with "Payment as guest".</p>
       </div>
 
       <p>Knowing what the industry says (and with the support of studies like those from the Baymard Institute), the results would end up proving this:</p>
       <ul>
-        <li><strong>Guest Variant:</strong> Un salto de más del 30% en la conversión final y mucho más retorno de la inversión publicitaria.</li>
-        <li><strong>The opportunity cost:</strong> Menos correos captados para la base de datos de la newsletter.</li>
+        <li><strong>Guest Variant:</strong> A jump of more than 30% in the final conversion and much more return on advertising investment.</li>
+        <li><strong>The opportunity cost:</strong> Fewer emails captured for the newsletter database.</li>
       </ul>
 
       <h2>Conclusion</h2>
-      <p>La moraleja de este ejercicio es bastante simple: tener el email de un usuario para (quizás) venderle algo mañana <strong>It's not worth losing someone who wants to buy from you TODAY</strong>.</p>
+      <p>The moral of this exercise is quite simple: have a user's email to (maybe) sell them something tomorrow <strong>It's not worth losing someone who wants to buy from you TODAY</strong>.</p>
 
       <p>The data almost always leads us to the same golden rule: the main conversion (the sale) always rules over the secondary ones (the lead). Removing stones from the user's path is the fastest and cheapest way to make money in an e-commerce.</p>
     </div>
