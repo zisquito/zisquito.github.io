@@ -1,7 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4M2FDQX6DT"></script>
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://zisquito.github.io/articulos/unibite">
+  <meta property="og:title" content="Proyecto Unibite: Idea de negocio en la facultad | Francisco Andrés Robles Muñoz">
+  <meta property="og:description" content="Cómo nació Unibite, una app para pedir comida en la cafetería de la universidad. Validación de idea, MVP con bot de WhatsApp y lecciones aprendidas.">
+  <meta property="og:image" content="https://zisquito.github.io/img/blog/unibite_tarjeta.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://zisquito.github.io/articulos/unibite">
+  <meta name="twitter:title" content="Proyecto Unibite: Idea de negocio en la facultad | Francisco Andrés Robles Muñoz">
+  <meta name="twitter:description" content="Cómo nació Unibite, una app para pedir comida en la cafetería de la universidad. Validación de idea, MVP con bot de WhatsApp y lecciones aprendidas.">
+  <meta name="twitter:image" content="https://zisquito.github.io/img/blog/unibite_tarjeta.webp">
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -11,22 +23,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://zisquito.github.io/articulos/el-dilema-del-checkout">
-<meta name="description" content="Proyecto práctico de CRO y Analítica Digital: por qué obligar al usuario a registrarse en el checkout destruye las conversiones de un e-commerce.">
+<link rel="canonical" href="https://zisquito.github.io/articulos/unibite">
+<meta name="description" content="Cómo nació Unibite, una app para pedir comida en la cafetería de la universidad. Validación de idea, MVP con bot de WhatsApp y lecciones aprendidas.">
 <meta name="author" content="Francisco Andrés Robles Muñoz">
-<title>El dilema del Checkout y el coste de la fricción | Francisco Andrés Robles Muñoz</title>
-
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://zisquito.github.io/articulos/el-dilema-del-checkout">
-<meta property="og:title" content="El dilema del Checkout y el coste de la fricción | Francisco Andrés Robles Muñoz">
-<meta property="og:description" content="Proyecto práctico de CRO y Analítica Digital: por qué obligar al usuario a registrarse en el checkout destruye las conversiones de un e-commerce.">
-<meta property="og:image" content="https://zisquito.github.io/img/blog/cro_checkout.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://zisquito.github.io/articulos/el-dilema-del-checkout">
-<meta name="twitter:title" content="El dilema del Checkout y el coste de la fricción | Francisco Andrés Robles Muñoz">
-<meta name="twitter:description" content="Proyecto práctico de CRO y Analítica Digital: por qué obligar al usuario a registrarse en el checkout destruye las conversiones de un e-commerce.">
-<meta name="twitter:image" content="https://zisquito.github.io/img/blog/cro_checkout.webp">
-
+<title>Proyecto Unibite | Francisco Andrés Robles Muñoz</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,23 +66,29 @@
   .article-content h3 { font-size: 1.3rem; color: var(--text-dark); margin: 30px 0 10px 0; }
   .article-content p { margin-bottom: 25px; }
   
-  /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
-  .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
-  
-  .img-caption { text-align: center; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 30px; font-style: italic; }
-
   /* CAJAS DE RESUMEN */
   .insight-box { background: var(--white); padding: 25px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e5e7eb; border-left: 4px solid #10b981; }
   .insight-box ul { padding-left: 20px; margin-top: 15px; }
   .insight-box li { margin-bottom: 10px; }
   .insight-box p { margin-bottom: 0px !important; }
+  
+  /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
+  .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
+  
+  /* Overrides para tamaños específicos */
+  .img-logo { max-width: 250px !important; margin: 30px auto 10px auto !important; box-shadow: none !important; border: none !important; }
+  .img-mobile { max-width: 280px !important; margin: 30px auto 10px auto !important; border-radius: 20px !important; box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important; }
+  /* NUEVA CLASE PARA REDUCIR GOOGLE BUSINESS */
+  .img-gbusiness { max-width: 450px !important; margin: 30px auto 10px auto !important; }
+
+  .img-caption { text-align: center; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 30px; font-style: italic; }
 
   /* FOOTER */
   footer { display: flex; align-items: center; gap: 20px; padding: 40px 0; margin-top: 80px; border-top: 1px solid #e5e7eb; color: var(--text-gray); }
   .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
   .social-icons a:hover { color: var(--primary-blue); }
   
-  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } }
+  @media(max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } .brand-subtitle { display: none; } .article-title { font-size: 2rem; } .img-gbusiness { max-width: 100% !important; } }
 
   /* Dark Mode Styles */
   body.dark-mode {
@@ -108,11 +114,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "El dilema del Checkout y el coste oculto de la fricción",
-  "description": "Proyecto práctico de CRO y Analítica: el impacto destructivo del registro obligatorio en el checkout.",
-  "url": "https://zisquito.github.io/articulos/el-dilema-del-checkout",
-  "image": "https://zisquito.github.io/img/blog/cro_checkout.webp",
-  "datePublished": "2026-03-09",
+  "headline": "Proyecto Unibite: Una idea de negocio nacida en la facultad",
+  "description": "Cómo nació Unibite, una app para pedir comida en la cafetería de la universidad. Validación de idea, MVP con bot de WhatsApp y lecciones aprendidas.",
+  "url": "https://zisquito.github.io/articulos/unibite",
+  "image": "https://zisquito.github.io/img/blog/unibite_tarjeta.webp",
+  "datePublished": "2026-03-01",
   "author": {
     "@type": "Person",
     "name": "Francisco Andrés Robles Muñoz",
@@ -127,7 +133,7 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zisquito.github.io/sobre-mi"},
       {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zisquito.github.io/blog"},
-      {"@type": "ListItem", "position": 3, "name": "El dilema del Checkout", "item": "https://zisquito.github.io/articulos/el-dilema-del-checkout"}
+      {"@type": "ListItem", "position": 3, "name": "Proyecto Unibite", "item": "https://zisquito.github.io/articulos/unibite"}
     ]
   }
 }
@@ -139,69 +145,58 @@
   <div class="nav-content">
     <div class="brand">Francisco Robles <div class="brand-subtitle">Marketing & Analytics </div></div>
   <ul class="nav-links">
-  <li><a href="/sobre-mi">Sobre mí</a></li>
-  <li><a href="/blog">Blog</a></li>
-  <li><a href="/contacto">Contáctame</a></li>
+  <li><a href="/en/sobre-mi">About me</a></li>
+  <li><a href="/en/blog">Blog</a></li>
+  <li><a href="/en/contacto">Contact me</a></li>
 </ul>
-    <button id="langToggle" aria-label="Switch to English" style="background: none; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'">EN</button>
-    <button id="darkModeToggle" aria-label="Cambiar modo oscuro" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'"><i class="fa-solid fa-moon"></i></button>
+    <button id="langToggle" aria-label="Switch to Spanish" style="background: none; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'">ES</button>
+    <button id="darkModeToggle" aria-label="Toggle dark mode" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'"><i class="fa-solid fa-moon"></i></button>
     <a href="/CV_FranciscoRobles.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
   </div>
 </nav>
 
 <main class="container">
   
-  <a href="/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al Blog</a>
+  <a href="/en/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Return to Blog </a>
 
   <article>
     <header class="article-header">
-      <h1 class="article-title">El dilema del Checkout y el coste oculto de la fricción</h1>
-      <span class="article-date"><i class="fa-regular fa-calendar"></i> Marzo 2026 • CRO y Analítica Digital</span>
+      <h1 class="article-title">Unibite Project: A business idea born in college</h1>
+      <span class="article-date"><i class="fa-regular fa-calendar"></i> Marzo 2026 • Proyecto Universitario</span>
     </header>
 
     <div class="article-content">
-      <img src="../img/blog/cro.webp" alt="Gráficas y elementos de embudo de conversión indicando análisis CRO">
+      <p>All university students know the same scene: The moment to disconnect, you have exactly 30 minutes before returning to class, you arrive at the cafeteria and you find an endless queue. In the end, you spend the entire recess waiting for a snack or you decide not to buy anything to avoid wasting time.</p>
       
-      <p>¿Alguna vez has dejado un carrito de la compra abandonado porque la tienda te obligó a crearte una cuenta? Seguramente sí. Todos lo hemos hecho alguna vez.</p>
+      <h2>The birth of Unibite</h2>
+      <p>A partir de esta situación tan cotidiana nació <strong>Unibite</strong>, a business idea that my classmates and I developed in the Business Creation subject. The concept was simple: create a platform where students could check the menu and prices and, most importantly, order their food in advance to pick it up without waiting in line.</p>
+ 
+      <img src="../img/blog/unibite-logo.webp" alt="Logo de Unibite" class="img-logo">
+      <p class="img-caption">Logo design for the Unibite project</p>
       
-      <p>Este es un ejercicio práctico que he montado para ilustrar algo que veo a diario: cómo los datos deberían mandar sobre las opiniones a la hora de tomar decisiones. Para hacerlo más visual, he planteado un escenario súper típico hoy en día: el clásico e-commerce que mete mucho dinero en Ads, atrae un montón de tráfico, pero luego los números no salen por culpa de la fricción.</p>
+      <h2>Validation and the MVP</h2>
+      <p>In order not to rely only on assumptions, we went out to validate the idea. We surveyed quite a few students and spoke to workers at several cafeterias. Indeed, we were facing a real problem: bottlenecks at rush hour generated frustration among students and caused local businesses to lose sales.</p>
 
-      <h2>El problema de base</h2>
-      <p>Si miramos un embudo de conversión típico, el panorama suele ser este: entran miles de usuarios, pero el <strong>84% abandona el carrito</strong>. Básicamente, estamos tirando el dinero de marketing por el desagüe en el último centímetro.</p>
+      <p>We decided to start as simple as possible. For the pilot test, we set up a very basic minimum viable product: a WhatsApp bot. The students wrote to him to consult the letter and make their request.</p>
 
-      <p>Si montásemos una Exploración de Embudo en GA4, veríamos una caída parecida a esta:</p>
-      <ul>
-        <li>Usuarios que añaden al carrito: 100%</li>
-        <li>Usuarios que inician el Checkout: 75%</li>
-        <li>Usuarios que llegan a <em>"Crea tu cuenta para pagar"</em>: 70%</li>
-        <li><strong>Usuarios que pasan a añadir dirección: 14%</strong></li>
-      </ul>
-      <br>
-      <p>El tapón está clarísimo: casi el 80% de la gente que ya sacaba la tarjeta se echa para atrás en cuanto les pedimos que se registren por obligación.</p>
+      <img src="../img/blog/unibite-bot.webp" alt="Captura del bot de Unibite en WhatsApp" class="img-mobile">
+      <p class="img-caption">Automated interface through WhatsApp</p>
 
-      <h2>El Dilema de Negocio</h2>
-      <p>Desde el punto de vista del CRO y la analítica, la solución no tiene mucho debate: <strong>hay que poner un "Pago como Invitado" (Guest Checkout) ya mismo</strong>.</p>
+      <p>In addition, to give it the appearance of a real business, we designed the visual identity and opened a profile on Google Business before testing it in the cafeteria of our own college.</p>
+
+      <img src="../img/blog/unibite-google.webp" alt="Perfil de Google Business de Unibite" class="img-gbusiness">
+      <p class="img-caption">Perfil de Google Business </p>
+
+      <h2>The shock of reality</h2>
+      <p>And this was where we came face to face with reality. Developing the technology and setting up the bot had its difficulties, of course, but the real barrier was not there. The really complicated thing was changing the way the cafeteria worked.</p>
       
-      <p>Pero claro, en el mundo real aquí es donde te topas con otros departamentos. Marketing podría quejarse: <em>"Si dejamos que compren como invitados, nos quedamos sin su email para mandarles la newsletter y hacer retargeting. No podemos perder esos leads."</em></p>
-
-      <h2>La solución: dejar que hablen los datos</h2>
-      <p>Para no entrar en guerras de "yo creo que...", lo suyo es montar un Test A/B rápido y dividir el tráfico a la mitad:</p>
+      <p>Suddenly, the staff had to stop looking only at the bar to keep an eye on a cell phone in case digital orders arrived. We realized that the platform is a critical point, yes, but understanding how it integrates into the daily routine of a worker in a hurry is what makes the difference between success and failure.</p>
       
       <div class="insight-box">
-        <p><strong>Versión A (Control):</strong> Flujo original con registro obligatorio.<br>
-        <strong>Versión B (Variante):</strong> Nuevo flujo con "Pago como invitado".</p>
+        <p><strong>The big lesson:</strong> Convencer a los dueños de negocios tradicionales para que cambien sus dinámicas y compren un servicio que nunca han usado es todo un reto. La tecnología es solo una parte de la ecuación. Comercializar el servicio, vencer las resistencias internas y ganarte la confianza del cliente B2B es el verdadero desafío de cualquier idea de negocio.</p>
       </div>
 
-      <p>Sabiendo lo que dice la industria (y con el respaldo de estudios como los del Baymard Institute), los resultados acabarían demostrando esto:</p>
-      <ul>
-        <li><strong>Variante Invitado:</strong> Un salto de más del 30% en la conversión final y mucho más retorno de la inversión publicitaria.</li>
-        <li><strong>El coste de oportunidad:</strong> Menos correos captados para la base de datos de la newsletter.</li>
-      </ul>
-
-      <h2>Conclusión</h2>
-      <p>La moraleja de este ejercicio es bastante simple: tener el email de un usuario para (quizás) venderle algo mañana <strong>no compensa perder a alguien que te quiere comprar HOY</strong>.</p>
-
-      <p>Los datos casi siempre nos llevan a la misma regla de oro: la conversión principal (la venta) manda siempre sobre las secundarias (el lead). Quitarle piedras del camino al usuario es la forma más rápida y barata de ganar dinero en un e-commerce.</p>
+      <p>Who knows, maybe in the future my colleagues and I will take Unibite back to make it a reality. We now know that, in addition to polishing the technology, we will need a much finer strategy to successfully implement it and reach the end customer.</p>
     </div>
   </article>
 
@@ -270,3 +265,12 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+

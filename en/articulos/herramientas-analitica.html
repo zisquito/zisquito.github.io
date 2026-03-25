@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4M2FDQX6DT"></script>
 <script>
@@ -11,22 +11,21 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://zisquito.github.io/articulos/el-dilema-del-checkout">
-<meta name="description" content="Proyecto práctico de CRO y Analítica Digital: por qué obligar al usuario a registrarse en el checkout destruye las conversiones de un e-commerce.">
+<link rel="canonical" href="https://zisquito.github.io/articulos/herramientas-analitica">
+<meta name="description" content="Descubre las 5 herramientas de analítica digital imprescindibles: GA4, Search Console, Clarity, Excel y Looker Studio. Por Francisco Andrés Robles Muñoz.">
 <meta name="author" content="Francisco Andrés Robles Muñoz">
-<title>El dilema del Checkout y el coste de la fricción | Francisco Andrés Robles Muñoz</title>
+<title>5 Herramientas de Analítica Fundamentales | Francisco Andrés Robles Muñoz</title>
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://zisquito.github.io/articulos/el-dilema-del-checkout">
-<meta property="og:title" content="El dilema del Checkout y el coste de la fricción | Francisco Andrés Robles Muñoz">
-<meta property="og:description" content="Proyecto práctico de CRO y Analítica Digital: por qué obligar al usuario a registrarse en el checkout destruye las conversiones de un e-commerce.">
-<meta property="og:image" content="https://zisquito.github.io/img/blog/cro_checkout.webp">
+<meta property="og:url" content="https://zisquito.github.io/articulos/herramientas-analitica">
+<meta property="og:title" content="5 Herramientas de Analítica Fundamentales | Francisco Andrés Robles Muñoz">
+<meta property="og:description" content="Descubre las 5 herramientas de analítica digital imprescindibles: GA4, Search Console, Clarity, Excel y Looker Studio.">
+<meta property="og:image" content="https://zisquito.github.io/img/blog/portada-analitica.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://zisquito.github.io/articulos/el-dilema-del-checkout">
-<meta name="twitter:title" content="El dilema del Checkout y el coste de la fricción | Francisco Andrés Robles Muñoz">
-<meta name="twitter:description" content="Proyecto práctico de CRO y Analítica Digital: por qué obligar al usuario a registrarse en el checkout destruye las conversiones de un e-commerce.">
-<meta name="twitter:image" content="https://zisquito.github.io/img/blog/cro_checkout.webp">
-
+<meta name="twitter:url" content="https://zisquito.github.io/articulos/herramientas-analitica">
+<meta name="twitter:title" content="5 Herramientas de Analítica Fundamentales | Francisco Andrés Robles Muñoz">
+<meta name="twitter:description" content="Descubre las 5 herramientas de analítica digital imprescindibles: GA4, Search Console, Clarity, Excel y Looker Studio.">
+<meta name="twitter:image" content="https://zisquito.github.io/img/blog/portada-analitica.webp">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,23 +60,17 @@
   .article-date { color: var(--text-gray); font-weight: 500; margin-bottom: 15px; display: block; font-size: 0.95rem; }
   .article-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-dark); }
   
-  .article-content { font-size: 1.15rem; line-height: 1.8; color: #4b5563; padding-bottom: 60px; }
+  .article-content { font-size: 1.1rem; line-height: 1.8; color: #4b5563; padding-bottom: 60px; }
   .article-content h2 { font-size: 1.6rem; color: var(--text-dark); margin: 40px 0 15px 0; border-left: 4px solid var(--primary-blue); padding-left: 15px; }
-  .article-content h3 { font-size: 1.3rem; color: var(--text-dark); margin: 30px 0 10px 0; }
-  .article-content p { margin-bottom: 25px; }
+  .article-content p { margin-bottom: 20px; }
+  .article-content img { width: 100%; border-radius: 12px; margin: 30px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
   
-  /* ESTILOS PARA LAS IMÁGENES DENTRO DEL POST */
-  .article-content img { width: 100%; border-radius: 12px; margin: 30px 0 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: block; }
-  
-  .img-caption { text-align: center; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 30px; font-style: italic; }
+  /* Cajas de herramientas */
+  .tool-box { background: var(--white); padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e5e7eb; }
+  .tool-box h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; color: var(--text-dark); }
+  .tool-box h3 i { color: var(--primary-blue); font-size: 1.4rem; }
 
-  /* CAJAS DE RESUMEN */
-  .insight-box { background: var(--white); padding: 25px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e5e7eb; border-left: 4px solid #10b981; }
-  .insight-box ul { padding-left: 20px; margin-top: 15px; }
-  .insight-box li { margin-bottom: 10px; }
-  .insight-box p { margin-bottom: 0px !important; }
-
-  /* FOOTER */
+  /* FOOTER IDENTICO AL RESTO */
   footer { display: flex; align-items: center; gap: 20px; padding: 40px 0; margin-top: 80px; border-top: 1px solid #e5e7eb; color: var(--text-gray); }
   .social-icons a { color: var(--text-dark); font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
   .social-icons a:hover { color: var(--primary-blue); }
@@ -108,11 +101,10 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "El dilema del Checkout y el coste oculto de la fricción",
-  "description": "Proyecto práctico de CRO y Analítica: el impacto destructivo del registro obligatorio en el checkout.",
-  "url": "https://zisquito.github.io/articulos/el-dilema-del-checkout",
-  "image": "https://zisquito.github.io/img/blog/cro_checkout.webp",
-  "datePublished": "2026-03-09",
+  "headline": "5 Herramientas de Analítica que uso a diario",
+  "description": "Descubre las 5 herramientas de analítica digital imprescindibles: GA4, Search Console, Clarity, Excel y Looker Studio.",
+  "url": "https://zisquito.github.io/articulos/herramientas-analitica",
+  "datePublished": "2026-02-15",
   "author": {
     "@type": "Person",
     "name": "Francisco Andrés Robles Muñoz",
@@ -127,7 +119,7 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zisquito.github.io/sobre-mi"},
       {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zisquito.github.io/blog"},
-      {"@type": "ListItem", "position": 3, "name": "El dilema del Checkout", "item": "https://zisquito.github.io/articulos/el-dilema-del-checkout"}
+      {"@type": "ListItem", "position": 3, "name": "5 Herramientas de Analítica", "item": "https://zisquito.github.io/articulos/herramientas-analitica"}
     ]
   }
 }
@@ -139,69 +131,59 @@
   <div class="nav-content">
     <div class="brand">Francisco Robles <div class="brand-subtitle">Marketing & Analytics </div></div>
   <ul class="nav-links">
-  <li><a href="/sobre-mi">Sobre mí</a></li>
-  <li><a href="/blog">Blog</a></li>
-  <li><a href="/contacto">Contáctame</a></li>
+  <li><a href="/en/sobre-mi">About me</a></li>
+  <li><a href="/en/blog">Blog</a></li>
+  <li><a href="/en/contacto">Contact me</a></li>
 </ul>
-    <button id="langToggle" aria-label="Switch to English" style="background: none; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'">EN</button>
-    <button id="darkModeToggle" aria-label="Cambiar modo oscuro" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'"><i class="fa-solid fa-moon"></i></button>
-    <a href="/CV_FranciscoRobles.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
+    <button id="langToggle" aria-label="Switch to Spanish" style="background: none; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'">ES</button>
+    <button id="darkModeToggle" aria-label="Toggle dark mode" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'"><i class="fa-solid fa-moon"></i></button>
+    <a href="../CV_FranciscoRobles.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
   </div>
 </nav>
 
 <main class="container">
   
-  <a href="/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al Blog</a>
+  <a href="/en/blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver al blog</a>
 
   <article>
     <header class="article-header">
-      <h1 class="article-title">El dilema del Checkout y el coste oculto de la fricción</h1>
-      <span class="article-date"><i class="fa-regular fa-calendar"></i> Marzo 2026 • CRO y Analítica Digital</span>
+      <h1 class="article-title">5 Analytics Tools I Use Everyday</h1>
+      <span class="article-date"><i class="fa-regular fa-calendar"></i> Febrero 2026 • Analítica</span>
     </header>
 
     <div class="article-content">
-      <img src="../img/blog/cro.webp" alt="Gráficas y elementos de embudo de conversión indicando análisis CRO">
+      <p>La intuición no es suficiente para tomar buenas decisiones. Necesitamos medir, analizar y optimizar. Quiero compartir 5 herramientas fundamenetales para tomar las mejores deciones. </p>
       
-      <p>¿Alguna vez has dejado un carrito de la compra abandonado porque la tienda te obligó a crearte una cuenta? Seguramente sí. Todos lo hemos hecho alguna vez.</p>
-      
-      <p>Este es un ejercicio práctico que he montado para ilustrar algo que veo a diario: cómo los datos deberían mandar sobre las opiniones a la hora de tomar decisiones. Para hacerlo más visual, he planteado un escenario súper típico hoy en día: el clásico e-commerce que mete mucho dinero en Ads, atrae un montón de tráfico, pero luego los números no salen por culpa de la fricción.</p>
+      <h2>Analytical Stack</h2>
 
-      <h2>El problema de base</h2>
-      <p>Si miramos un embudo de conversión típico, el panorama suele ser este: entran miles de usuarios, pero el <strong>84% abandona el carrito</strong>. Básicamente, estamos tirando el dinero de marketing por el desagüe en el último centímetro.</p>
-
-      <p>Si montásemos una Exploración de Embudo en GA4, veríamos una caída parecida a esta:</p>
-      <ul>
-        <li>Usuarios que añaden al carrito: 100%</li>
-        <li>Usuarios que inician el Checkout: 75%</li>
-        <li>Usuarios que llegan a <em>"Crea tu cuenta para pagar"</em>: 70%</li>
-        <li><strong>Usuarios que pasan a añadir dirección: 14%</strong></li>
-      </ul>
-      <br>
-      <p>El tapón está clarísimo: casi el 80% de la gente que ya sacaba la tarjeta se echa para atrás en cuanto les pedimos que se registren por obligación.</p>
-
-      <h2>El Dilema de Negocio</h2>
-      <p>Desde el punto de vista del CRO y la analítica, la solución no tiene mucho debate: <strong>hay que poner un "Pago como Invitado" (Guest Checkout) ya mismo</strong>.</p>
-      
-      <p>Pero claro, en el mundo real aquí es donde te topas con otros departamentos. Marketing podría quejarse: <em>"Si dejamos que compren como invitados, nos quedamos sin su email para mandarles la newsletter y hacer retargeting. No podemos perder esos leads."</em></p>
-
-      <h2>La solución: dejar que hablen los datos</h2>
-      <p>Para no entrar en guerras de "yo creo que...", lo suyo es montar un Test A/B rápido y dividir el tráfico a la mitad:</p>
-      
-      <div class="insight-box">
-        <p><strong>Versión A (Control):</strong> Flujo original con registro obligatorio.<br>
-        <strong>Versión B (Variante):</strong> Nuevo flujo con "Pago como invitado".</p>
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-chart-pie"></i> 1. Google Analytics 4 (GA4)</h3>
+        <p>It is the basis of everything. Although the transition from Universal Analytics was challenging for the industry, GA4's event-based model offers tremendous flexibility. I mainly use it to analyze user behavior, measure key conversions (leads, downloads) and understand which acquisition channels are working best.</p>
       </div>
 
-      <p>Sabiendo lo que dice la industria (y con el respaldo de estudios como los del Baymard Institute), los resultados acabarían demostrando esto:</p>
-      <ul>
-        <li><strong>Variante Invitado:</strong> Un salto de más del 30% en la conversión final y mucho más retorno de la inversión publicitaria.</li>
-        <li><strong>El coste de oportunidad:</strong> Menos correos captados para la base de datos de la newsletter.</li>
-      </ul>
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-magnifying-glass-chart"></i> 2. Google Search Console</h3>
+        <p>Si GA4 me dice qué hacen los usuarios <em>inside</em> from the web, Search Console tells me how <em>they arrive</em> desde Google. Es indispensable para cualquier estrategia SEO. Lo uso para detectar oportunidades de palabras clave, vigilar el CTR de las páginas y asegurarme de que no hay errores de indexación que estén frenando el tráfico.</p>
+      </div>
 
-      <h2>Conclusión</h2>
-      <p>La moraleja de este ejercicio es bastante simple: tener el email de un usuario para (quizás) venderle algo mañana <strong>no compensa perder a alguien que te quiere comprar HOY</strong>.</p>
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-fire"></i> 3. Microsoft Clarity (o Hotjar)</h3>
+        <p>GA4's numbers are cold; heat maps and session recordings put a face to that data. When I see that a page has a high bounce rate, I turn to CRO tools like Clarity to see if users are getting stuck on a form or if a button is unclear. Qualitative data is gold!</p>
+      </div>
 
-      <p>Los datos casi siempre nos llevan a la misma regla de oro: la conversión principal (la venta) manda siempre sobre las secundarias (el lead). Quitarle piedras del camino al usuario es la forma más rápida y barata de ganar dinero en un e-commerce.</p>
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-table"></i> 4. Excel / Google Sheets</h3>
+        <p>It may sound basic, but it's the truth: no visualization tool beats a good spreadsheet when you need to clean data quickly, cross-tab pivot tables, or do ad-hoc analysis. He is the best friend of any junior (and senior) analyst.</p>
+      </div>
+
+      <div class="tool-box">
+        <h3><i class="fa-solid fa-chart-line"></i> 5. Looker Studio (Data Studio)</h3>
+        <p>Clients or managers do not like to enter the complex interface of GA4. Looker Studio allows me to connect all the previous sources (GA4, Search Console, Google Ads) and create interactive, clean and easy to understand dashboards to present the results at the end of the month.</p>
+      </div>
+
+    
+      <p>Dominar estas herramientas es solo el primer paso; el verdadero valor está en <strong>knowing how to ask the right questions of data</strong>. It is useless to have a beautiful dashboard if we do not extract actionable *insights* that improve the business strategy.</p>
+
     </div>
   </article>
 
@@ -220,6 +202,7 @@
       link.classList.remove("active");
       const href = link.getAttribute("href");
       
+      // Si estamos dentro de la carpeta "articulos", dejamos activo el botón "Blog"
       if (currentUrl.includes("/articulos/") && href === "/blog") {
         link.classList.add("active");
       } else if (currentUrl.endsWith(href) || currentUrl.includes(href + ".html") || (currentUrl === "/" && href === "/sobre-mi")) {
@@ -270,3 +253,14 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
