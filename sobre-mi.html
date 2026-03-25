@@ -57,7 +57,7 @@
   .hero-text p strong { color: var(--text-dark); }
   .badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
   .badge { background: var(--white); color: var(--text-dark); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-  .badge .fa-chart-simple { color: #F9AB00; } .badge .fa-google { color: #4285F4; } .badge .fa-magnifying-glass-chart { color: #0F9D58; } .badge .fa-file-excel { color: #107C41; } .badge .fa-wordpress { color: #21759B; }
+  .badge .fa-chart-simple { color: #F9AB00; } .badge .fa-google { color: #4285F4; } .badge .fa-magnifying-glass-chart { color: #0F9D58; } .badge .fa-file-excel { color: #107C41; } .badge .fa-wordpress { color: #21759B; } .badge .fa-tag { color: #4285F4; } .badge .fa-search { color: #8ab4f8; } .badge .fa-eye { color: #00A4EF; } .badge .fa-chart-column { color: #F2C811; } .badge .fa-database { color: #00758F; }
   .hero-image { flex: 1; position: relative; display: flex; justify-content: center; }
   .image-wrapper { position: relative; z-index: 2; }
   .image-wrapper img { width: 100%; max-width: 450px; border-radius: 30px 10px 40px 10px; border: 8px solid var(--white); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
@@ -153,7 +153,7 @@
   <li><a href="/contacto">Contáctame</a></li>
 </ul>
     <div id="langToggle" style="font-weight: 800; margin-right: 20px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; cursor: default;"><span>ES</span> <span style="color: var(--text-gray); font-weight: 400;">|</span> <a href="/en/sobre-mi" style="color: var(--text-gray); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary-blue)'" onmouseout="this.style.color='var(--text-gray)'">EN</a></div>
-    <button id="darkModeToggle" aria-label="Cambiar modo oscuro" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background=\'rgba(128,128,128,0.1)\'" onmouseout="this.style.background=\'none\'"><i class="fa-solid fa-moon"></i></button>
+    <button id="darkModeToggle" aria-label="Cambiar modo oscuro" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-dark); margin-right: 15px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: 0.3s;" onmouseover="this.style.background='rgba(128,128,128,0.1)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-moon"></i></button>
     <a href="CV_FranciscoRobles.pdf" class="btn-primary" download><i class="fa-regular fa-user"></i> Descargar CV</a>
   </div>
 </nav>
@@ -168,9 +168,14 @@
      <p> <strong>Curioso</strong> por naturaleza.</p>
       <div class="badges">
         <div class="badge"><i class="fa-solid fa-chart-simple"></i> GA4</div>
+        <div class="badge"><i class="fa-solid fa-tag"></i> Google Tag Manager</div>
+        <div class="badge"><i class="fa-solid fa-search"></i> Google Search Console</div>
         <div class="badge"><i class="fa-brands fa-google"></i> Google Ads</div>
         <div class="badge"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO</div>
+        <div class="badge"><i class="fa-solid fa-eye"></i> Clarity</div>
+        <div class="badge"><i class="fa-solid fa-chart-column"></i> Power BI</div>
         <div class="badge"><i class="fa-solid fa-file-excel"></i> Excel</div>
+        <div class="badge"><i class="fa-solid fa-database"></i> SQL</div>
         <div class="badge"><i class="fa-brands fa-wordpress"></i> WordPress</div>
       </div>
     </div>
