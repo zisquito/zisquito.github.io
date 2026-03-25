@@ -156,7 +156,7 @@
   }
   .logo-slide-track {
       display: flex;
-      width: calc(150px * 16);
+      width: calc(170px * 16);
       animation: scroll_logos 25s linear infinite;
   }
   .logo-slide-track:hover {
@@ -164,17 +164,21 @@
   }
   @keyframes scroll_logos {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-150px * 8)); }
+      100% { transform: translateX(calc(-170px * 8)); }
   }
   .slide {
       width: 150px;
       height: 80px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 15px;
       filter: grayscale(100%) opacity(0.6);
       transition: filter 0.3s;
+      background: rgba(0,0,0,0.03);
+      border-radius: 12px;
+      margin: 0 10px;
   }
   .slide:hover {
       filter: grayscale(0%) opacity(1);
