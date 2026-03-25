@@ -113,9 +113,76 @@
   body.dark-mode nav {
     box-shadow: 0 2px 10px rgba(255,255,255,0.05);
   }
-  /* Optional generic card borders in dark mode for more contrast */
   body.dark-mode .blog-card {
     border: 1px solid #374151;
+  }
+
+  /* LOGO SLIDER */
+  .logo-slider-section {
+      padding: 40px 0 20px 0;
+      background: transparent;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+  }
+  .logo-slider-section::before,
+  .logo-slider-section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      z-index: 2;
+  }
+  .logo-slider-section::before {
+      left: 0;
+      background: linear-gradient(to right, var(--bg-light) 0%, rgba(255,255,255,0) 100%);
+  }
+  .logo-slider-section::after {
+      right: 0;
+      background: linear-gradient(to left, var(--bg-light) 0%, rgba(255,255,255,0) 100%);
+  }
+  body.dark-mode .logo-slider-section::before {
+      background: linear-gradient(to right, var(--bg-light) 0%, rgba(17,24,39,0) 100%);
+  }
+  body.dark-mode .logo-slider-section::after {
+      background: linear-gradient(to left, var(--bg-light) 0%, rgba(17,24,39,0) 100%);
+  }
+
+  .logo-slider {
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 0;
+  }
+  .logo-slide-track {
+      display: flex;
+      width: calc(150px * 16);
+      animation: scroll_logos 25s linear infinite;
+  }
+  .logo-slide-track:hover {
+      animation-play-state: paused;
+  }
+  @keyframes scroll_logos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-150px * 8)); }
+  }
+  .slide {
+      width: 150px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      filter: grayscale(100%) opacity(0.6);
+      transition: filter 0.3s;
+  }
+  .slide:hover {
+      filter: grayscale(0%) opacity(1);
+  }
+  .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
   }
 </style>
 <script type="application/ld+json">
