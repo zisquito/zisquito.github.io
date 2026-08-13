@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /para-laura
 Allow: /
 
 Sitemap: https://zisquito.github.io/sitemap.xml
