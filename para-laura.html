@@ -563,8 +563,7 @@
 
   <!-- Header -->
   <header class="page-header">
-    <h1>📩 Una Propuesta Muy Seria Para Laura</h1>
-    <p class="subtitle">⚠️ Lee con atención. Esto es un documento <em style="color:#c4b5fd;">muy oficial</em>.</p>
+    <h1>Candidato para Laura :3</h1>
   </header>
 
   <!-- Profile card -->
@@ -663,7 +662,7 @@
       <button class="response-btn btn-notnow" id="btnNotNow" onclick="handleResponse('notnow', '⏳ Ahora mismo no')">
         ⏳ Ahora mismo no
       </button>
-      <button class="response-btn btn-no" id="btnNo">
+      <button class="response-btn btn-no" id="btnNo" onclick="handleResponse('no', '😤 No, no quiero')">
         😤 No, no quiero
       </button>
     </div>
@@ -695,23 +694,6 @@
   </div>
 </div>
 
-<div class="response-overlay" id="overlayNotNow">
-  <div class="response-content">
-    <span class="response-emoji">⏰🥺</span>
-    <h2>Esperaré...</h2>
-    <p>No pasa nada, el tiempo dirá. Mientras tanto, estaré aquí, paseando por la naturaleza, hablando con gatos callejeros y viendo anime. Ya sabes dónde encontrarme. Esta página no caduca. 🌿</p>
-    <button class="close-overlay" onclick="closeOverlay('overlayNotNow')">🤝 OK, lo pensaré</button>
-  </div>
-</div>
-
-<div class="response-overlay" id="overlayNo">
-  <div class="response-content">
-    <span class="response-emoji">💔</span>
-    <h2>Vaya...</h2>
-    <p>Bueno, al menos lo intenté. Si algún día cambias de opinión, aquí seguiré, viendo anime y hablando con gatos. 🐱</p>
-    <button class="close-overlay" onclick="closeOverlay('overlayNo')">😔 Entendido</button>
-  </div>
-</div>
 
 <!-- Hidden form for email notification -->
 <form id="notificationForm" action="https://formsubmit.co/francisco.andres.robles.munoz@gmail.com" method="POST" style="display:none;" target="hidden_iframe">
@@ -751,38 +733,7 @@
     sparklesContainer.appendChild(sparkle);
   }
 
-  // "No" button runs away on hover, but works normally on click
-  const btnNo = document.getElementById('btnNo');
-  let noAttempts = 0;
-  const maxRunAways = 5;
-
-  btnNo.addEventListener('mouseover', function(e) {
-    if (noAttempts < maxRunAways) {
-      const btnRect = this.getBoundingClientRect();
-      const maxX = window.innerWidth - btnRect.width - 20;
-      const maxY = window.innerHeight - btnRect.height - 20;
-
-      this.style.position = 'fixed';
-      this.style.left = Math.random() * maxX + 'px';
-      this.style.top = Math.random() * maxY + 'px';
-      this.style.zIndex = '100';
-      this.style.transition = 'none';
-      this.style.width = btnRect.width + 'px';
-      noAttempts++;
-    }
-  });
-
-  btnNo.addEventListener('click', function() {
-    // Reset position and show the "no" overlay
-    this.style.position = 'relative';
-    this.style.left = 'auto';
-    this.style.top = 'auto';
-    this.style.zIndex = '1';
-    this.style.width = 'auto';
-    handleResponse('no', '😤 No, no quiero');
-  });
-
-  // Handle response: show overlay + send email
+  // Handle response: send email + show overlay only for yes/ok
   function handleResponse(type, label) {
     // Send email notification
     const form = document.getElementById('notificationForm');
@@ -790,12 +741,12 @@
     document.getElementById('formDate').value = new Date().toLocaleString('es-ES', { dateStyle: 'full', timeStyle: 'short' });
     form.submit();
 
-    // Show overlay
-    const overlayMap = { yes: 'overlayYes', ok: 'overlayOk', notnow: 'overlayNotNow', no: 'overlayNo' };
-    const overlay = document.getElementById(overlayMap[type]);
-    if (overlay) {
-      overlay.classList.add('active');
-      if (type === 'yes' || type === 'ok') {
+    // Show overlay only for "yes" and "ok"
+    if (type === 'yes' || type === 'ok') {
+      const overlayMap = { yes: 'overlayYes', ok: 'overlayOk' };
+      const overlay = document.getElementById(overlayMap[type]);
+      if (overlay) {
+        overlay.classList.add('active');
         launchConfetti();
       }
     }
