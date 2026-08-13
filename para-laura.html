@@ -90,7 +90,7 @@
   .page-header h1 {
     font-size: 2.5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #ff6b9d, #c44dff, #6e8efb);
+    background: linear-gradient(135deg, #a78bfa, #7c3aed, #6366f1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -140,36 +140,21 @@
   }
 
   .profile-photo img {
-    width: 160px;
-    height: 160px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(255,107,157,0.5);
-    box-shadow: 0 0 30px rgba(196,77,255,0.3);
+    border: 4px solid rgba(167,139,250,0.4);
+    box-shadow: 0 0 30px rgba(124,58,237,0.25);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
   .profile-photo img:hover {
-    transform: scale(1.08) rotate(3deg);
-    box-shadow: 0 0 50px rgba(196,77,255,0.5);
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 45px rgba(124,58,237,0.35);
   }
 
-  .profile-photo::after {
-    content: '💖';
-    position: absolute;
-    bottom: -5px;
-    right: -5px;
-    font-size: 2rem;
-    animation: heartBeat 1.5s ease-in-out infinite;
-  }
 
-  @keyframes heartBeat {
-    0%, 100% { transform: scale(1); }
-    15% { transform: scale(1.3); }
-    30% { transform: scale(1); }
-    45% { transform: scale(1.2); }
-    60% { transform: scale(1); }
-  }
 
   .profile-info h2 {
     font-size: 1.8rem;
@@ -185,29 +170,12 @@
   }
 
   .profile-info .tagline em {
-    color: #ff6b9d;
+    color: #c4b5fd;
     font-style: normal;
     font-weight: 600;
   }
 
-  .compatibility-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, rgba(255,107,157,0.2), rgba(196,77,255,0.2));
-    border: 1px solid rgba(255,107,157,0.3);
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #ff9dc5;
-    animation: pulse 2s ease-in-out infinite;
-  }
 
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,157,0.3); }
-    50% { box-shadow: 0 0 20px 5px rgba(255,107,157,0.15); }
-  }
 
   /* Traits section */
   .traits-section {
@@ -335,7 +303,7 @@
 
   /* Question card */
   .question-card {
-    background: linear-gradient(135deg, rgba(255,107,157,0.15), rgba(196,77,255,0.15), rgba(110,142,251,0.15));
+    background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(124,58,237,0.15), rgba(99,102,241,0.15));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.15);
@@ -394,9 +362,9 @@
   }
 
   .btn-yes {
-    background: linear-gradient(135deg, #ff6b9d, #c44dff);
+    background: linear-gradient(135deg, #a78bfa, #7c3aed);
     color: #fff;
-    border-color: rgba(255,107,157,0.5);
+    border-color: rgba(167,139,250,0.5);
     grid-column: 1 / -1;
     font-size: 1.3rem;
     padding: 22px;
@@ -404,7 +372,7 @@
 
   .btn-yes:hover {
     transform: scale(1.06);
-    box-shadow: 0 10px 40px rgba(255,107,157,0.4);
+    box-shadow: 0 10px 40px rgba(124,58,237,0.4);
   }
 
   .btn-ok {
@@ -542,8 +510,8 @@
     .page-header h1 { font-size: 1.8rem; }
     .profile-top { flex-direction: column; text-align: center; }
     .profile-info .tagline { text-align: center; }
-    .compatibility-badge { margin: 0 auto; }
-    .profile-photo img { width: 130px; height: 130px; }
+
+    .profile-photo img { width: 160px; height: 160px; }
     .traits-grid { grid-template-columns: 1fr; }
     .buttons-grid { grid-template-columns: 1fr; }
     .btn-yes { grid-column: 1; }
@@ -596,7 +564,7 @@
   <!-- Header -->
   <header class="page-header">
     <h1>📩 Una Propuesta Muy Seria Para Laura</h1>
-    <p class="subtitle">⚠️ Lee con atención. Esto es un documento <em style="color:#ff6b9d;">muy oficial</em>.</p>
+    <p class="subtitle">⚠️ Lee con atención. Esto es un documento <em style="color:#c4b5fd;">muy oficial</em>.</p>
   </header>
 
   <!-- Profile card -->
@@ -608,10 +576,6 @@
       <div class="profile-info">
         <h2>Francisco Andrés Robles Muñoz</h2>
         <p class="tagline">Se postula oficialmente como <em>tu pareja</em> 💜</p>
-        <div class="compatibility-badge">
-          <i class="fa-solid fa-heart-pulse"></i>
-          Compatibilidad estimada: 99.7%
-        </div>
       </div>
     </div>
 
@@ -690,13 +654,13 @@
     <h2>Entonces, Laura... 🤔</h2>
     <p>¿Aceptas a Francisco Andrés Robles Muñoz como tu compañero de aventuras, paseos, maratones de anime y tardes de sofá?</p>
     <div class="buttons-grid">
-      <button class="response-btn btn-yes" id="btnYes" onclick="showResponse('yes')">
-        💖 Siiiii
+      <button class="response-btn btn-yes" id="btnYes" onclick="handleResponse('yes', '💖 Siiiii')">
+        💜 Siiiii
       </button>
-      <button class="response-btn btn-ok" id="btnOk" onclick="showResponse('ok')">
+      <button class="response-btn btn-ok" id="btnOk" onclick="handleResponse('ok', '😏 Okey pesado')">
         😏 Okey pesado
       </button>
-      <button class="response-btn btn-notnow" id="btnNotNow" onclick="showResponse('notnow')">
+      <button class="response-btn btn-notnow" id="btnNotNow" onclick="handleResponse('notnow', '⏳ Ahora mismo no')">
         ⏳ Ahora mismo no
       </button>
       <button class="response-btn btn-no" id="btnNo">
@@ -740,6 +704,25 @@
   </div>
 </div>
 
+<div class="response-overlay" id="overlayNo">
+  <div class="response-content">
+    <span class="response-emoji">💔</span>
+    <h2>Vaya...</h2>
+    <p>Bueno, al menos lo intenté. Si algún día cambias de opinión, aquí seguiré, viendo anime y hablando con gatos. 🐱</p>
+    <button class="close-overlay" onclick="closeOverlay('overlayNo')">😔 Entendido</button>
+  </div>
+</div>
+
+<!-- Hidden form for email notification -->
+<form id="notificationForm" action="https://formsubmit.co/francisco.andres.robles.munoz@gmail.com" method="POST" style="display:none;" target="hidden_iframe">
+  <input type="hidden" name="_subject" value="💌 Laura ha respondido a tu propuesta">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="box">
+  <input type="hidden" name="Respuesta" id="formResponse" value="">
+  <input type="hidden" name="Fecha" id="formDate" value="">
+</form>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
 <script>
   // Generate floating hearts
   const heartsContainer = document.getElementById('heartsContainer');
@@ -768,69 +751,50 @@
     sparklesContainer.appendChild(sparkle);
   }
 
-  // "No" button runs away!
+  // "No" button runs away on hover, but works normally on click
   const btnNo = document.getElementById('btnNo');
-  let noClickCount = 0;
-  const funnyTexts = [
-    '😤 No, no quiero',
-    '😤 ¿Segura?',
-    '😤 Piénsalo mejor...',
-    '🥺 ¿En serio?',
-    '😢 Inténtalo otra vez',
-    '💔 Me voy...',
-    '🏃 ¡No me pillas!',
-    '👻 boo',
-    '🫠 ...',
-    '💀 ok ya paro'
-  ];
+  let noAttempts = 0;
+  const maxRunAways = 5;
 
   btnNo.addEventListener('mouseover', function(e) {
-    if (noClickCount < 8) {
-      const parent = this.parentElement;
-      const parentRect = parent.getBoundingClientRect();
+    if (noAttempts < maxRunAways) {
       const btnRect = this.getBoundingClientRect();
-
-      // Random position within the buttons grid area
       const maxX = window.innerWidth - btnRect.width - 20;
       const maxY = window.innerHeight - btnRect.height - 20;
 
-      const newX = Math.random() * maxX;
-      const newY = Math.random() * maxY;
-
       this.style.position = 'fixed';
-      this.style.left = newX + 'px';
-      this.style.top = newY + 'px';
+      this.style.left = Math.random() * maxX + 'px';
+      this.style.top = Math.random() * maxY + 'px';
       this.style.zIndex = '100';
       this.style.transition = 'none';
       this.style.width = btnRect.width + 'px';
-
-      noClickCount++;
-      if (noClickCount < funnyTexts.length) {
-        this.textContent = funnyTexts[noClickCount];
-      }
+      noAttempts++;
     }
   });
 
   btnNo.addEventListener('click', function() {
-    // After many tries, it finally "gives up"
+    // Reset position and show the "no" overlay
     this.style.position = 'relative';
     this.style.left = 'auto';
     this.style.top = 'auto';
     this.style.zIndex = '1';
-    this.textContent = '💖 Siiiii';
-    this.className = 'response-btn btn-yes';
-    this.style.gridColumn = '1 / -1';
     this.style.width = 'auto';
-    this.onclick = function() { showResponse('yes'); };
+    handleResponse('no', '😤 No, no quiero');
   });
 
-  // Show response overlay
-  function showResponse(type) {
-    const overlayId = 'overlay' + type.charAt(0).toUpperCase() + type.slice(1);
-    const overlay = document.getElementById(overlayId);
+  // Handle response: show overlay + send email
+  function handleResponse(type, label) {
+    // Send email notification
+    const form = document.getElementById('notificationForm');
+    document.getElementById('formResponse').value = label;
+    document.getElementById('formDate').value = new Date().toLocaleString('es-ES', { dateStyle: 'full', timeStyle: 'short' });
+    form.submit();
+
+    // Show overlay
+    const overlayMap = { yes: 'overlayYes', ok: 'overlayOk', notnow: 'overlayNotNow', no: 'overlayNo' };
+    const overlay = document.getElementById(overlayMap[type]);
     if (overlay) {
       overlay.classList.add('active');
-
       if (type === 'yes' || type === 'ok') {
         launchConfetti();
       }
@@ -856,7 +820,7 @@
     canvas.height = window.innerHeight;
 
     const confettiPieces = [];
-    const colors = ['#ff6b9d', '#c44dff', '#6e8efb', '#ffb74d', '#4dd0e1', '#81c784', '#ff8a80', '#ea80fc'];
+    const colors = ['#a78bfa', '#7c3aed', '#6366f1', '#818cf8', '#c4b5fd', '#93c5fd', '#a5b4fc', '#ddd6fe'];
 
     for (let i = 0; i < 150; i++) {
       confettiPieces.push({
